@@ -25,7 +25,16 @@ export const Route = createFileRoute("/")({
           "Presencia, contenido, visibilidad en Google y gestión de cotizaciones para empresas industriales.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://velocentum.agency/" },
+      { property: "og:site_name", content: "Velocentum" },
+      { name: "robots", content: "index, follow" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Sistema Industrial por Velocentum" },
+      {
+        name: "twitter:description",
+        content:
+          "Presencia, contenido, visibilidad en Google y gestión de cotizaciones para empresas industriales.",
+      },
     ],
   }),
   component: Index,

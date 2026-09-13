@@ -78,6 +78,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "Velocentum" },
+      { name: "application-name", content: "Sistema Industrial por Velocentum" },
+      { name: "theme-color", content: "#0A0A0A" },
+      { name: "facebook-domain-verification", content: "3cxg1c0xwn2igo15enoc1j4moa3jve" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -86,6 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "canonical", href: "https://velocentum.agency/" },
       {
         rel: "preconnect",
         href: "https://fonts.googleapis.com",
