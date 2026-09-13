@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CasosGreenpacRouteImport } from './routes/casos/greenpac'
+import { Route as CasosPatagoniaVesselsRouteImport } from './routes/casos/patagonia-vessels'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CasosGreenpacRoute = CasosGreenpacRouteImport.update({
+  id: '/casos/greenpac',
+  path: '/casos/greenpac',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasosPatagoniaVesselsRoute = CasosPatagoniaVesselsRouteImport.update({
+  id: '/casos/patagonia-vessels',
+  path: '/casos/patagonia-vessels',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/casos/greenpac': typeof CasosGreenpacRoute
+  '/casos/patagonia-vessels': typeof CasosPatagoniaVesselsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/casos/greenpac': typeof CasosGreenpacRoute
+  '/casos/patagonia-vessels': typeof CasosPatagoniaVesselsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/casos/greenpac': typeof CasosGreenpacRoute
+  '/casos/patagonia-vessels': typeof CasosPatagoniaVesselsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/casos/greenpac' | '/casos/patagonia-vessels'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/casos/greenpac' | '/casos/patagonia-vessels'
+  id: '__root__' | '/' | '/casos/greenpac' | '/casos/patagonia-vessels'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CasosGreenpacRoute: typeof CasosGreenpacRoute
+  CasosPatagoniaVesselsRoute: typeof CasosPatagoniaVesselsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/casos/greenpac': {
+      id: '/casos/greenpac'
+      path: '/casos/greenpac'
+      fullPath: '/casos/greenpac'
+      preLoaderRoute: typeof CasosGreenpacRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casos/patagonia-vessels': {
+      id: '/casos/patagonia-vessels'
+      path: '/casos/patagonia-vessels'
+      fullPath: '/casos/patagonia-vessels'
+      preLoaderRoute: typeof CasosPatagoniaVesselsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CasosGreenpacRoute: CasosGreenpacRoute,
+  CasosPatagoniaVesselsRoute: CasosPatagoniaVesselsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

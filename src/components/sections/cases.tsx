@@ -11,7 +11,7 @@ const cases = [
     enables:
       "El equipo puede recibir cada pedido con contexto y seguirlo desde una misma operación.",
     flow: ["Catálogo", "Consulta", "Cotización", "Seguimiento"],
-    href: "https://greenpac.com.ar",
+    href: "/casos/greenpac",
     accent: "orange",
   },
   {
@@ -24,7 +24,7 @@ const cases = [
     enables:
       "El comprador entiende qué puede fabricar la empresa y cómo trabaja antes de enviar su requerimiento.",
     flow: ["Capacidades", "Proceso", "Requerimiento", "Presupuesto"],
-    href: "https://patagoniavessels.com.ar",
+    href: "/casos/patagonia-vessels",
     accent: "violet",
   },
 ] as const;
@@ -122,11 +122,9 @@ export function Cases() {
 
                 <a
                   href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
                   className="relative mt-7 inline-flex items-center gap-2 text-sm font-bold text-ink"
                 >
-                  Ver implementación pública
+                  Ver caso
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </a>
               </article>

@@ -6,7 +6,7 @@ const footerLinks = [
   { label: "Cómo trabajamos", href: "#proceso" },
 ];
 
-export function Footer() {
+export function Footer({ basePath = "" }: { basePath?: string }) {
   return (
     <footer className="bg-ink text-white">
       <div className="border-b border-white/12 bg-[#1d172e]">
@@ -47,7 +47,10 @@ export function Footer() {
               <ul className="mt-4 space-y-3">
                 {footerLinks.map((link) => (
                   <li key={link.href}>
-                    <a href={link.href} className="text-sm text-white/65 hover:text-white">
+                    <a
+                      href={`${basePath}${link.href}`}
+                      className="text-sm text-white/65 hover:text-white"
+                    >
                       {link.label}
                     </a>
                   </li>

@@ -13,13 +13,13 @@ const navLinks = [
 const contactHref =
   "https://wa.me/5491135810100?text=Hola%20Velocentum%2C%20quiero%20conversar%20sobre%20el%20Sistema%20Industrial.";
 
-export function Navbar() {
+export function Navbar({ basePath = "" }: { basePath?: string }) {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-black/10 bg-paper/90 backdrop-blur-xl">
       <nav className="mx-auto flex h-[72px] w-full max-w-[1240px] items-center justify-between px-5 sm:px-8">
-        <a href="#inicio" className="flex items-center gap-3">
+        <a href={`${basePath}#inicio`} className="flex items-center gap-3">
           <Brand />
           <span className="hidden border-l border-black/15 pl-3 text-[10px] font-bold uppercase tracking-[0.16em] text-steel sm:inline">
             Sistema Industrial
@@ -30,7 +30,7 @@ export function Navbar() {
           {navLinks.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={`${basePath}${link.href}`}
               className="text-sm font-medium text-steel transition-colors hover:text-ink"
             >
               {link.label}
@@ -70,7 +70,7 @@ export function Navbar() {
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={`${basePath}${link.href}`}
                 onClick={() => setOpen(false)}
                 className="text-base font-medium text-steel hover:text-ink"
               >
