@@ -1,24 +1,50 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/sections/navbar";
+import { Hero } from "@/components/sections/hero";
+import { Problems } from "@/components/sections/problems";
+import { System } from "@/components/sections/system";
+import { Services } from "@/components/sections/services";
+import { Process } from "@/components/sections/process";
+import { Cases } from "@/components/sections/cases";
+import { Cta } from "@/components/sections/cta";
+import { Footer } from "@/components/sections/footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Velocentum — Sistemas industriales integrados" },
+      {
+        name: "description",
+        content:
+          "Velocentum diseña e implementa sistemas industriales para operaciones más limpias, seguras y rentables.",
+      },
+      { property: "og:title", content: "Velocentum — Sistemas industriales integrados" },
+      {
+        property: "og:description",
+        content:
+          "Velocentum diseña e implementa sistemas industriales para operaciones más limpias, seguras y rentables.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="flex min-h-screen flex-col bg-background">
+      <Navbar />
+      <main className="flex-1">
+        <Hero />
+        <Problems />
+        <System />
+        <Services />
+        <Process />
+        <Cases />
+        <Cta />
+      </main>
+      <Footer />
     </div>
   );
 }
