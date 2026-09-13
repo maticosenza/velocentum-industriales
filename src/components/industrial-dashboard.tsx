@@ -2,19 +2,19 @@ import { ArrowUpRight, Check, Clock3, FileText, Search, UserRound } from "lucide
 
 const quotes = [
   {
-    company: "Norte Agro",
-    request: "Equipo de embolsado",
+    company: "Empresa agrícola",
+    request: "Equipo de producción",
     status: "Propuesta enviada",
     tone: "violet",
   },
   {
-    company: "Metalúrgica Sur",
-    request: "Tanque API 650",
+    company: "Fabricante industrial",
+    request: "Proyecto a medida",
     status: "En preparación",
     tone: "orange",
   },
   {
-    company: "Campos del Oeste",
+    company: "Distribuidor regional",
     request: "Repuestos y servicio",
     status: "Nueva consulta",
     tone: "green",
@@ -36,12 +36,16 @@ export function IndustrialDashboard({ compact = false }: { compact?: boolean }) 
             </p>
           </div>
         </div>
-        <span className="rounded-full bg-[#e8f7ef] px-2 py-1 text-[8px] font-bold text-[#18794e]">
-          Sistema activo
+        <span className="rounded-full bg-violet-soft px-2 py-1 text-[8px] font-bold text-violet">
+          Vista demostrativa
         </span>
       </div>
 
       <div className="grid gap-3 p-4 sm:p-5">
+        <p className="font-mono text-[7px] font-semibold uppercase tracking-[0.16em] text-steel">
+          Datos ilustrativos
+        </p>
+
         <div className="grid grid-cols-3 gap-2">
           {[
             ["12", "Consultas", Search],

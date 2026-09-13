@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { trackMetaContact } from "@/lib/meta-pixel";
 
 const contactHref =
   "https://wa.me/5491135810100?text=Hola%20Velocentum%2C%20quiero%20solicitar%20una%20propuesta%20para%20mi%20empresa%20industrial.";
@@ -26,7 +27,12 @@ export function Cta() {
               size="lg"
               className="h-12 rounded-full bg-white px-7 text-violet shadow-none hover:bg-white/90"
             >
-              <a href={contactHref} target="_blank" rel="noreferrer">
+              <a
+                href={contactHref}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => trackMetaContact("final_cta")}
+              >
                 Solicitar una propuesta <ArrowRight />
               </a>
             </Button>

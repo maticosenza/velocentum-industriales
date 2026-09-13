@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Brand } from "@/components/brand";
+import { trackMetaContact } from "@/lib/meta-pixel";
 
 const navLinks = [
   { label: "Sistema", href: "#sistema" },
@@ -42,7 +43,12 @@ export function Navbar() {
             asChild
             className="h-11 rounded-full bg-violet px-6 text-white shadow-none hover:bg-violet/90"
           >
-            <a href={contactHref} target="_blank" rel="noreferrer">
+            <a
+              href={contactHref}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => trackMetaContact("navbar_desktop")}
+            >
               Solicitar propuesta
             </a>
           </Button>
@@ -72,7 +78,12 @@ export function Navbar() {
               </a>
             ))}
             <Button asChild className="w-full bg-violet text-white hover:bg-violet/90">
-              <a href={contactHref} target="_blank" rel="noreferrer">
+              <a
+                href={contactHref}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => trackMetaContact("navbar_mobile")}
+              >
                 Solicitar propuesta
               </a>
             </Button>

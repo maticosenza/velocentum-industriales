@@ -1,6 +1,7 @@
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { IndustrialDashboard } from "@/components/industrial-dashboard";
+import { trackMetaContact } from "@/lib/meta-pixel";
 
 const features = [
   "Solicitudes adaptadas a cada producto o servicio",
@@ -43,7 +44,12 @@ export function System() {
               asChild
               className="mt-8 h-11 rounded-full bg-violet px-6 text-white shadow-none hover:bg-violet/90"
             >
-              <a href={contactHref} target="_blank" rel="noreferrer">
+              <a
+                href={contactHref}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => trackMetaContact("system")}
+              >
                 Solicitar propuesta <ArrowRight />
               </a>
             </Button>

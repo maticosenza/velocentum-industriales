@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Search, Sparkles } from "lucide-react";
 import { IndustrialDashboard } from "@/components/industrial-dashboard";
+import { trackMetaContact } from "@/lib/meta-pixel";
 
 const contactHref =
   "https://wa.me/5491135810100?text=Hola%20Velocentum%2C%20quiero%20conversar%20sobre%20mi%20empresa%20y%20el%20Sistema%20Industrial.";
@@ -34,7 +35,12 @@ export function Hero() {
                 size="lg"
                 className="h-12 rounded-full bg-violet px-7 text-white shadow-none hover:bg-violet/90"
               >
-                <a href={contactHref} target="_blank" rel="noreferrer">
+                <a
+                  href={contactHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => trackMetaContact("hero")}
+                >
                   Conversar sobre mi empresa <ArrowRight />
                 </a>
               </Button>
