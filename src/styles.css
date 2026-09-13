@@ -46,8 +46,10 @@
   /* Brand semantic colors */
   --color-violet: var(--violet);
   --color-violet-foreground: var(--violet-foreground);
+  --color-violet-soft: var(--violet-soft);
   --color-orange: var(--orange);
   --color-orange-foreground: var(--orange-foreground);
+  --color-orange-soft: var(--orange-soft);
   --color-ink: var(--ink);
   --color-paper: var(--paper);
   --color-steel: var(--steel);
