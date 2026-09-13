@@ -12,17 +12,17 @@ import { Footer } from "@/components/sections/footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Velocentum — Sistemas industriales integrados" },
+      { title: "Sistema Industrial por Velocentum" },
       {
         name: "description",
         content:
-          "Velocentum diseña e implementa sistemas industriales para operaciones más limpias, seguras y rentables.",
+          "Presencia, contenido, visibilidad en Google y gestión de cotizaciones para empresas industriales.",
       },
-      { property: "og:title", content: "Velocentum — Sistemas industriales integrados" },
+      { property: "og:title", content: "Sistema Industrial por Velocentum" },
       {
         property: "og:description",
         content:
-          "Velocentum diseña e implementa sistemas industriales para operaciones más limpias, seguras y rentables.",
+          "Presencia, contenido, visibilidad en Google y gestión de cotizaciones para empresas industriales.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -38,8 +38,8 @@ function Index() {
       <main className="flex-1">
         <Hero />
         <Problems />
-        <System />
         <Services />
+        <System />
         <Process />
         <Cases />
         <Cta />

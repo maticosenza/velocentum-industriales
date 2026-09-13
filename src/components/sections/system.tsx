@@ -1,37 +1,34 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { IndustrialDashboard } from "@/components/industrial-dashboard";
 
 const features = [
-  "Diagnóstico operativo integral",
-  "Diseño de arquitectura industrial",
-  "Implementación de tecnología y equipos",
-  "Capacitación y acompañamiento",
-  "Métricas y mejora continua",
+  "Solicitudes adaptadas a cada producto o servicio",
+  "Estados comerciales, clientes y contactos centralizados",
+  "Responsables, historial y seguimiento de cada oportunidad",
+  "Recordatorios y emails vinculados a las cotizaciones",
 ];
+
+const contactHref =
+  "https://wa.me/5491135810100?text=Hola%20Velocentum%2C%20quiero%20solicitar%20una%20propuesta%20para%20mi%20empresa%20industrial.";
 
 export function System() {
   return (
-    <section id="sistema" className="border-y border-border bg-steel-light py-20">
-      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+    <section id="sistema" className="bg-[#eeece7] py-20 sm:py-24">
+      <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8">
+        <div className="grid gap-14 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
           <div className="order-2 lg:order-1">
-            <div className="aspect-video w-full overflow-hidden rounded-2xl bg-paper">
-              <div className="flex h-full items-center justify-center text-steel">
-                <div className="text-center">
-                  <div className="mx-auto mb-3 h-12 w-12 rounded-full bg-violet/10" />
-                  <p className="text-sm font-medium">Diagrama del sistema industrial</p>
-                  <p className="text-xs">(placeholder)</p>
-                </div>
-              </div>
-            </div>
+            <IndustrialDashboard />
           </div>
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Un sistema industrial pensado para resultados
+            <p className="eyebrow">Después del clic</p>
+            <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.04em] text-ink sm:text-5xl">
+              Lo que pasa después del clic también forma parte del sistema.
             </h2>
             <p className="mt-4 text-steel">
-              Integramos personas, procesos y tecnología en un sistema coherente que mejora la
-              eficiencia operativa de forma sostenida.
+              La presencia genera interés. El sistema comercial lo convierte en una consulta
+              ordenada, medible y lista para trabajar.
             </p>
 
             <ul className="mt-8 space-y-4">
@@ -42,6 +39,14 @@ export function System() {
                 </li>
               ))}
             </ul>
+            <Button
+              asChild
+              className="mt-8 h-11 rounded-full bg-violet px-6 text-white shadow-none hover:bg-violet/90"
+            >
+              <a href={contactHref} target="_blank" rel="noreferrer">
+                Solicitar propuesta <ArrowRight />
+              </a>
+            </Button>
           </div>
         </div>
       </div>

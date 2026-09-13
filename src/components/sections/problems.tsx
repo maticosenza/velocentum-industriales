@@ -1,51 +1,52 @@
-import { AlertTriangle, TrendingDown, ShieldAlert } from "lucide-react";
+import { Inbox, SearchX, ScanText } from "lucide-react";
 
 const problems = [
   {
-    icon: AlertTriangle,
-    title: "Procesos fragmentados",
+    icon: ScanText,
+    title: "No se entiende todo lo que pueden fabricar",
     description:
-      "Sistemas aislados que generan pérdida de información y decisiones lentas en planta.",
+      "Capacidades, procesos y experiencia quedan escondidos en una web vieja o en presentaciones dispersas.",
   },
   {
-    icon: ShieldAlert,
-    title: "Riesgos operativos",
+    icon: SearchX,
+    title: "Los compradores no los encuentran",
     description:
-      "Falta de visibilidad en tiempo real que expone a la operación a incidentes prevenibles.",
+      "La empresa no aparece cuando alguien busca un producto, un proveedor o una capacidad específica.",
   },
   {
-    icon: TrendingDown,
-    title: "Rentabilidad afectada",
+    icon: Inbox,
+    title: "Las cotizaciones quedan repartidas",
     description:
-      "Ineficiencias ocultas que aumentan costos y reducen la competitividad industrial.",
+      "Emails, WhatsApp y planillas dificultan responder, asignar responsables y hacer seguimiento.",
   },
 ];
 
 export function Problems() {
   return (
-    <section className="bg-background py-20">
-      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            Problemas industriales que resolvemos
+    <section className="bg-paper py-20 sm:py-24">
+      <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8">
+        <div className="max-w-4xl">
+          <p className="eyebrow">El problema comercial</p>
+          <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.04em] text-ink sm:text-5xl">
+            Una gran capacidad industrial puede quedar invisible detrás de una presencia débil.
           </h2>
-          <p className="mt-4 text-steel">
-            Muchas plantas industriales enfrentan los mismos obstáculos. Trabajamos sobre ellos con
-            un enfoque práctico y medible.
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-steel sm:text-lg">
+            El mercado primero necesita encontrar, entender y confiar. Después llega la oportunidad
+            de cotizar.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid overflow-hidden rounded-2xl border border-black/10 lg:grid-cols-3">
           {problems.map((problem) => (
             <div
               key={problem.title}
-              className="rounded-xl border border-border bg-paper p-6 transition-shadow hover:shadow-sm"
+              className="border-b border-black/10 bg-[#f7f6f3] p-7 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-soft text-orange">
                 <problem.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-ink">{problem.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-steel">{problem.description}</p>
+              <h3 className="mt-6 text-lg font-bold leading-snug text-ink">{problem.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-steel">{problem.description}</p>
             </div>
           ))}
         </div>

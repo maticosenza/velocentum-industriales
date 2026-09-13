@@ -54,12 +54,14 @@
   --color-paper: var(--paper);
   --color-steel: var(--steel);
   --color-steel-light: var(--steel-light);
+  --font-display: "Anton", Impact, sans-serif;
+  --font-mono: "Geist Mono", monospace;
 }
 
 :root {
   --radius: 0.5rem;
 
-  --background: oklch(1 0 0);
+  --background: #fcfbf8;
   --foreground: oklch(0.14 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.14 0 0);
@@ -81,16 +83,16 @@
   --ring: oklch(0.55 0.22 27);
 
   /* Velocentum brand tokens */
-  --violet: #8A3FFC;
-  --violet-foreground: #FFFFFF;
-  --violet-soft: #F4EEFF;
-  --orange: #F5451F;
-  --orange-foreground: #FFFFFF;
-  --orange-soft: #FFF0EC;
-  --ink: #0A0A0A;
-  --paper: #FFFFFF;
-  --steel: #6B7280;
-  --steel-light: #F3F4F6;
+  --violet: #8a3ffc;
+  --violet-foreground: #ffffff;
+  --violet-soft: #f4eeff;
+  --orange: #f5451f;
+  --orange-foreground: #ffffff;
+  --orange-soft: #fff0ec;
+  --ink: #0a0a0a;
+  --paper: #fcfbf8;
+  --steel: #6d6878;
+  --steel-light: #f1efea;
 }
 
 @layer base {
@@ -105,8 +107,53 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    font-family:
+      "Manrope",
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Anton", Impact, sans-serif;
+    font-weight: 400;
+  }
+  .font-mono {
+    font-family: "Geist Mono", monospace;
+  }
+  .eyebrow {
+    font-family: "Geist Mono", monospace;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--violet);
+  }
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 52px 52px;
+    mask-image: linear-gradient(to bottom, black, transparent 92%);
+  }
+  .status-violet {
+    background: #f0e8ff;
+    color: #6f28dc;
+  }
+  .status-orange {
+    background: #fff0ec;
+    color: #c63214;
+  }
+  .status-green {
+    background: #e8f7ef;
+    color: #18794e;
   }
 }

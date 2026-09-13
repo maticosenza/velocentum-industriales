@@ -1,45 +1,49 @@
 const steps = [
   {
     number: "01",
-    title: "Diagnóstico",
-    description: "Conocer la operación actual, sus cuellos de botella y oportunidades.",
+    title: "Relevamos",
+    description: "Productos, compradores, proceso comercial y presencia actual.",
   },
   {
     number: "02",
-    title: "Diseño",
-    description: "Definir la arquitectura del sistema y el plan de implementación.",
+    title: "Priorizamos",
+    description: "Definimos qué necesita resolverse primero y dónde está la oportunidad.",
   },
   {
     number: "03",
-    title: "Implementación",
-    description: "Desplegar tecnología, procesos y capacitaciones de forma coordinada.",
+    title: "Diseñamos",
+    description: "Construimos la presencia, el contenido y el sistema comercial.",
   },
   {
     number: "04",
-    title: "Evolución",
-    description: "Medir resultados y ajustar el sistema para mejorar continuamente.",
+    title: "Activamos",
+    description: "Conectamos canales, medición y seguimiento para empezar a operar.",
   },
 ];
 
 export function Process() {
   return (
-    <section id="proceso" className="border-y border-border bg-steel-light py-20">
-      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            Proceso de trabajo
+    <section id="proceso" className="border-y border-black/10 bg-[#eeece7] py-20 sm:py-24">
+      <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8">
+        <div className="max-w-3xl">
+          <p className="eyebrow">Cómo trabajamos</p>
+          <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.04em] text-ink sm:text-5xl">
+            Un sistema construido alrededor de cómo vende tu empresa.
           </h2>
           <p className="mt-4 text-steel">
-            Un método claro que reduce riesgos y acelera el retorno de la inversión.
+            No forzamos una fórmula estándar: ordenamos prioridades y construimos por etapas.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (
-            <div key={step.number} className="relative rounded-xl bg-paper p-6">
-              <span className="text-4xl font-bold text-violet/20">{step.number}</span>
-              <h3 className="mt-2 text-lg font-semibold text-ink">{step.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-steel">{step.description}</p>
+            <div
+              key={step.number}
+              className="relative rounded-2xl border border-black/8 bg-paper p-7"
+            >
+              <span className="font-mono text-xs font-bold text-violet">{step.number}</span>
+              <h3 className="mt-12 text-xl font-bold text-ink">{step.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-steel">{step.description}</p>
             </div>
           ))}
         </div>
