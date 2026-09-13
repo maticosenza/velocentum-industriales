@@ -3,8 +3,8 @@ import { ArrowRight } from "lucide-react";
 
 export function Cta() {
   return (
-    <section className="section-padding bg-ink text-white">
-      <div className="container-tight">
+    <section className="bg-ink py-20 text-white">
+      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Empezá a transformar tu operación industrial

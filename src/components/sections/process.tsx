@@ -23,8 +23,8 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="proceso" className="section-padding border-y border-border bg-steel-light">
-      <div className="container-tight">
+    <section id="proceso" className="border-y border-border bg-steel-light py-20">
+      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
             Proceso de trabajo

@@ -10,8 +10,8 @@ const features = [
 
 export function System() {
   return (
-    <section id="sistema" className="section-padding border-y border-border bg-steel-light">
-      <div className="container-tight">
+    <section id="sistema" className="border-y border-border bg-steel-light py-20">
+      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="order-2 lg:order-1">
             <div className="aspect-video w-full overflow-hidden rounded-2xl bg-paper">

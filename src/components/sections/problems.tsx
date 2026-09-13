@@ -23,8 +23,8 @@ const problems = [
 
 export function Problems() {
   return (
-    <section className="section-padding bg-background">
-      <div className="container-tight">
+    <section className="bg-background py-20">
+      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
             Problemas industriales que resolvemos

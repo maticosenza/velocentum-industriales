@@ -14,7 +14,7 @@ const footerLinks = [
 export function Footer() {
   return (
     <footer className="border-t border-border bg-background">
-      <div className="container-tight section-padding">
+      <div className="mx-auto w-full max-w-[1200px] px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
             <span className="text-2xl font-bold tracking-tight text-ink">Velocentum</span>

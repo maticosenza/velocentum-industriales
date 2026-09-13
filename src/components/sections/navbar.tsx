@@ -14,7 +14,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm">
-      <nav className="container-tight flex h-16 items-center justify-between">
+      <nav className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#" className="flex items-center gap-2">
           <span className="text-xl font-bold tracking-tight text-ink">Velocentum</span>
         </a>
@@ -47,7 +47,7 @@ export function Navbar() {
 
       {open && (
         <div className="border-t border-border bg-background md:hidden">
-          <div className="container-tight flex flex-col gap-4 py-4">
+          <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}

@@ -3,8 +3,8 @@ import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="section-padding border-b border-border bg-background">
-      <div className="container-tight">
+    <section className="border-b border-border bg-background py-20">
+      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="max-w-2xl">
             <span className="inline-flex items-center rounded-full border border-violet/20 bg-violet-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-violet">
