@@ -62,7 +62,12 @@ export function Hero() {
 
           <div className="relative mx-auto min-w-0 w-full max-w-[560px] lg:ml-auto lg:mt-10">
             <div className="absolute -inset-4 rounded-[2rem] border border-white/8 bg-white/3" />
-            <IndustrialDashboard />
+            <div className="sm:hidden">
+              <IndustrialDashboard compact />
+            </div>
+            <div className="hidden sm:block">
+              <IndustrialDashboard />
+            </div>
             <div className="absolute -bottom-5 -left-4 flex items-center gap-3 rounded-2xl border border-white/12 bg-[#211b35]/95 px-4 py-3 shadow-xl backdrop-blur sm:-left-8">
               <span className="grid h-9 w-9 place-items-center rounded-xl bg-orange text-white">
                 <Search className="h-4 w-4" />

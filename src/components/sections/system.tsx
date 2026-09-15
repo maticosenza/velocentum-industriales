@@ -18,11 +18,11 @@ export function System() {
     <section id="sistema" className="bg-[#eeece7] py-20 sm:py-24">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8">
         <div className="grid gap-14 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
-          <div className="order-2 lg:order-1">
+          <div className="hidden lg:order-1 lg:block">
             <IndustrialDashboard />
           </div>
 
-          <div className="order-1 lg:order-2">
+          <div className="lg:order-2">
             <p className="eyebrow">Después del clic</p>
             <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.04em] text-ink sm:text-5xl">
               Lo que pasa después del clic también forma parte del sistema.
@@ -31,6 +31,10 @@ export function System() {
               La presencia genera interés. El sistema comercial lo convierte en una consulta
               ordenada, medible y lista para trabajar.
             </p>
+
+            <div className="mt-8 lg:hidden">
+              <IndustrialDashboard compact />
+            </div>
 
             <ul className="mt-8 space-y-4">
               {features.map((feature) => (
