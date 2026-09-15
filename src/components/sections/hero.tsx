@@ -16,13 +16,13 @@ export function Hero() {
       <div className="absolute -left-40 -top-40 h-[34rem] w-[34rem] rounded-full bg-violet/15 blur-3xl" />
       <div className="absolute -bottom-48 right-[-8rem] h-[30rem] w-[30rem] rounded-full bg-orange/10 blur-3xl" />
       <div className="relative mx-auto w-full max-w-[1240px] px-5 sm:px-8">
-        <div className="grid min-w-0 gap-14 lg:grid-cols-[1.06fr_.94fr] lg:items-center">
+        <div className="grid min-w-0 gap-14 lg:grid-cols-[1.06fr_.94fr] lg:items-start">
           <div className="min-w-0 max-w-2xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/7 px-3 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-white/75">
               <Sparkles className="h-3 w-3 text-orange" /> Sistema Industrial por Velocentum
             </span>
             <h1 className="mt-7 font-display text-[3rem] uppercase leading-[.91] tracking-[-0.035em] sm:text-[4.6rem] lg:text-[5.25rem]">
-              Tu empresa ya tiene la capacidad.
+              Tu capacidad ya existe.
               <span className="block text-violet">Hagamos que el mercado la encuentre.</span>
             </h1>
             <p className="mt-7 max-w-xl text-base leading-relaxed text-white/68 sm:text-lg">
@@ -58,7 +58,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative mx-auto min-w-0 w-full max-w-[560px] lg:ml-auto">
+          <div className="relative mx-auto min-w-0 w-full max-w-[560px] lg:ml-auto lg:mt-10">
             <div className="absolute -inset-4 rounded-[2rem] border border-white/8 bg-white/3" />
             <IndustrialDashboard />
             <div className="absolute -bottom-5 -left-4 flex items-center gap-3 rounded-2xl border border-white/12 bg-[#211b35]/95 px-4 py-3 shadow-xl backdrop-blur sm:-left-8">
