@@ -21,9 +21,11 @@ export function Hero() {
             <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/7 px-3 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-white/75">
               <Sparkles className="h-3 w-3 text-orange" /> Sistema Industrial por Velocentum
             </span>
-            <h1 className="mt-7 font-display text-[3rem] uppercase leading-[.91] tracking-[-0.035em] sm:text-[4.6rem] lg:text-[5.25rem]">
-              Tu capacidad ya existe.
-              <span className="block text-violet">Hagamos que el mercado la encuentre.</span>
+            <h1 className="mt-7 font-display text-[clamp(2rem,10vw,4.6rem)] uppercase leading-[.91] tracking-[-0.035em] sm:text-[4.6rem] lg:text-[5.25rem]">
+              <span className="block whitespace-nowrap">Tu capacidad</span>
+              <span className="block whitespace-nowrap">ya existe.</span>
+              <span className="block whitespace-nowrap text-violet">Hagamos que el</span>
+              <span className="block whitespace-nowrap text-violet">mercado la encuentre.</span>
             </h1>
             <p className="mt-7 max-w-xl text-base leading-relaxed text-white/68 sm:text-lg">
               Diseñamos presencia, contenido, visibilidad en Google y sistemas de cotización para
