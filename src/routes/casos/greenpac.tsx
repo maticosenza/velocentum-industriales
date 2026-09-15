@@ -22,12 +22,16 @@ const greenpacCase: IndustrialCase = {
   flow: [
     { title: "Catálogo", text: "El comprador entiende el equipo, sus usos y especificaciones." },
     { title: "Consulta", text: "La solicitud llega asociada al producto que originó el interés." },
-    { title: "Cotización", text: "El equipo comercial prepara y registra la propuesta correspondiente." },
+    {
+      title: "Cotización",
+      text: "El equipo comercial prepara y registra la propuesta correspondiente.",
+    },
     { title: "Seguimiento", text: "La oportunidad conserva responsables, estado e historial." },
   ],
   publicUrl: "https://greenpac.com.ar",
   publicLabel: "Visitar Greenpac",
   accent: "orange",
+  showcase: "greenpac",
 };
 
 export const Route = createFileRoute("/casos/greenpac")({

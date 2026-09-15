@@ -29,7 +29,11 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicios" className="bg-ink py-20 text-white sm:py-24">
+    <section
+      id="servicios"
+      className="industrial-night relative overflow-hidden py-20 text-white sm:py-24"
+    >
+      <div className="hero-grid absolute inset-0 opacity-20" />
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8">
         <div className="max-w-3xl">
           <p className="eyebrow text-orange">Un sistema, cuatro partes</p>
@@ -44,12 +48,15 @@ export function Services() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/12 bg-white/12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group bg-ink p-7 transition-colors hover:bg-white/5"
+              className="industrial-dark-card group relative min-h-[270px] overflow-hidden rounded-[1.75rem] p-7 transition-transform duration-300 hover:-translate-y-1"
             >
+              <span
+                className={`absolute -right-12 -top-12 h-32 w-32 rounded-full ${index % 2 === 0 ? "bg-violet/12" : "bg-orange/10"}`}
+              />
               <div className="flex items-center justify-between">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/8 text-violet">
                   <service.icon className="h-5 w-5" />

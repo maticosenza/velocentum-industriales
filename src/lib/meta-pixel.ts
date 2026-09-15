@@ -1,9 +1,4 @@
-export type ContactLocation =
-  | "navbar_desktop"
-  | "navbar_mobile"
-  | "hero"
-  | "system"
-  | "final_cta";
+export type ContactLocation = "navbar_desktop" | "navbar_mobile" | "hero" | "system" | "final_cta";
 
 export function trackMetaContact(location: ContactLocation) {
   try {

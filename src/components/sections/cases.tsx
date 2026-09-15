@@ -86,9 +86,7 @@ export function Cases() {
                     <dt className="font-mono text-[9px] font-semibold uppercase tracking-[.16em] text-steel">
                       Sistema aplicado
                     </dt>
-                    <dd className="mt-2 text-sm leading-relaxed text-ink">
-                      {item.implementation}
-                    </dd>
+                    <dd className="mt-2 text-sm leading-relaxed text-ink">{item.implementation}</dd>
                   </div>
                 </dl>
 

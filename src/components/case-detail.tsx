@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { Navbar } from "@/components/sections/navbar";
 import { Footer } from "@/components/sections/footer";
+import { CaseShowcase } from "@/components/case-showcase";
 
 export type IndustrialCase = {
   name: string;
@@ -15,6 +16,7 @@ export type IndustrialCase = {
   publicUrl: string;
   publicLabel: string;
   accent: "orange" | "violet";
+  showcase: "greenpac" | "patagonia";
 };
 
 export function CaseDetail({ caseStudy }: { caseStudy: IndustrialCase }) {
@@ -27,7 +29,7 @@ export function CaseDetail({ caseStudy }: { caseStudy: IndustrialCase }) {
     <div className="flex min-h-screen flex-col bg-paper">
       <Navbar basePath="/" />
       <main className="flex-1">
-        <section className="relative overflow-hidden bg-ink py-20 text-white sm:py-28">
+        <section className="industrial-night relative overflow-hidden pb-20 pt-32 text-white sm:pb-28 sm:pt-36">
           <div className="hero-grid absolute inset-0 opacity-50" />
           <div className="relative mx-auto w-full max-w-[1100px] px-5 sm:px-8">
             <a
@@ -37,7 +39,9 @@ export function CaseDetail({ caseStudy }: { caseStudy: IndustrialCase }) {
               <ArrowLeft className="h-4 w-4" /> Volver a casos
             </a>
             <div className="mt-12 max-w-4xl">
-              <p className={`font-mono text-[10px] font-bold uppercase tracking-[.2em] ${accentText}`}>
+              <p
+                className={`font-mono text-[10px] font-bold uppercase tracking-[.2em] ${accentText}`}
+              >
                 {caseStudy.eyebrow}
               </p>
               <h1 className="mt-5 font-display text-6xl uppercase leading-[0.92] tracking-[-0.035em] sm:text-7xl lg:text-8xl">
@@ -75,6 +79,8 @@ export function CaseDetail({ caseStudy }: { caseStudy: IndustrialCase }) {
           </div>
         </section>
 
+        <CaseShowcase kind={caseStudy.showcase} accent={caseStudy.accent} />
+
         <section className="bg-[#f1efe9] py-20 sm:py-24">
           <div className="mx-auto w-full max-w-[1100px] px-5 sm:px-8">
             <div className="max-w-3xl">
@@ -85,7 +91,10 @@ export function CaseDetail({ caseStudy }: { caseStudy: IndustrialCase }) {
             </div>
             <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {caseStudy.flow.map((step, index) => (
-                <article key={step.title} className="rounded-2xl border border-black/10 bg-white p-6">
+                <article
+                  key={step.title}
+                  className="rounded-2xl border border-black/10 bg-white p-6"
+                >
                   <span className={`font-mono text-xs font-bold ${accentText}`}>0{index + 1}</span>
                   <h3 className="mt-8 text-lg font-extrabold text-ink">{step.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-steel">{step.text}</p>
@@ -98,12 +107,17 @@ export function CaseDetail({ caseStudy }: { caseStudy: IndustrialCase }) {
         <section className="py-20 sm:py-24">
           <div className="mx-auto grid w-full max-w-[1100px] gap-8 px-5 sm:px-8 lg:grid-cols-2">
             <div className={`rounded-2xl p-8 sm:p-10 ${accentSoft}`}>
-              <p className={`font-mono text-[10px] font-bold uppercase tracking-[.18em] ${accentText}`}>
+              <p
+                className={`font-mono text-[10px] font-bold uppercase tracking-[.18em] ${accentText}`}
+              >
                 Componentes del caso
               </p>
               <ul className="mt-8 space-y-4">
                 {caseStudy.capabilities.map((capability) => (
-                  <li key={capability} className="flex items-start gap-3 text-sm leading-relaxed text-ink">
+                  <li
+                    key={capability}
+                    className="flex items-start gap-3 text-sm leading-relaxed text-ink"
+                  >
                     <CheckCircle2 className={`mt-0.5 h-4 w-4 shrink-0 ${accentText}`} />
                     {capability}
                   </li>

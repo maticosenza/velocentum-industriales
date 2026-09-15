@@ -20,14 +20,21 @@ const patagoniaCase: IndustrialCase = {
     "Pedido de presupuesto orientado a proyectos y requerimientos técnicos.",
   ],
   flow: [
-    { title: "Capacidades", text: "El comprador identifica si la empresa puede resolver su necesidad." },
+    {
+      title: "Capacidades",
+      text: "El comprador identifica si la empresa puede resolver su necesidad.",
+    },
     { title: "Proceso", text: "La metodología y la fabricación quedan explicadas con claridad." },
     { title: "Requerimiento", text: "La consulta se enfoca en la necesidad técnica del proyecto." },
-    { title: "Presupuesto", text: "El equipo recibe una base más sólida para avanzar comercialmente." },
+    {
+      title: "Presupuesto",
+      text: "El equipo recibe una base más sólida para avanzar comercialmente.",
+    },
   ],
   publicUrl: "https://patagoniavessels.com.ar",
   publicLabel: "Visitar Patagonia Vessels",
   accent: "violet",
+  showcase: "patagonia",
 };
 
 export const Route = createFileRoute("/casos/patagonia-vessels")({

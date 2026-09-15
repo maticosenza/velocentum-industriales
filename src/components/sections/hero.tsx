@@ -10,11 +10,11 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative overflow-hidden bg-ink py-16 text-white sm:py-20 lg:py-24"
+      className="industrial-night relative overflow-hidden pb-16 pt-28 text-white sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36"
     >
       <div className="hero-grid absolute inset-0 opacity-30" />
-      <div className="absolute -left-40 -top-40 h-[34rem] w-[34rem] rounded-full bg-violet/20 blur-3xl" />
-      <div className="absolute -bottom-48 right-[-8rem] h-[30rem] w-[30rem] rounded-full bg-orange/15 blur-3xl" />
+      <div className="absolute -left-40 -top-40 h-[34rem] w-[34rem] rounded-full bg-violet/15 blur-3xl" />
+      <div className="absolute -bottom-48 right-[-8rem] h-[30rem] w-[30rem] rounded-full bg-orange/10 blur-3xl" />
       <div className="relative mx-auto w-full max-w-[1240px] px-5 sm:px-8">
         <div className="grid min-w-0 gap-14 lg:grid-cols-[1.06fr_.94fr] lg:items-center">
           <div className="min-w-0 max-w-2xl">

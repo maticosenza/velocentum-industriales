@@ -17,8 +17,8 @@ export function Navbar({ basePath = "" }: { basePath?: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-black/10 bg-paper/90 backdrop-blur-xl">
-      <nav className="mx-auto flex h-[72px] w-full max-w-[1240px] items-center justify-between px-5 sm:px-8">
+    <header className="fixed inset-x-0 top-0 z-50 w-full px-3 py-3 sm:px-5">
+      <nav className="mx-auto flex h-16 w-full max-w-[1240px] items-center justify-between rounded-full border border-black/10 bg-white/95 px-5 shadow-[0_12px_35px_rgba(15,10,25,0.14)] backdrop-blur-xl sm:px-7">
         <a href={`${basePath}#inicio`} className="flex items-center gap-3">
           <Brand />
           <span className="hidden border-l border-black/15 pl-3 text-[10px] font-bold uppercase tracking-[0.16em] text-steel sm:inline">
@@ -57,7 +57,7 @@ export function Navbar({ basePath = "" }: { basePath?: string }) {
         <button
           type="button"
           onClick={() => setOpen(!open)}
-          className="inline-flex items-center justify-center rounded-md p-2 text-ink lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-violet/25 bg-violet-soft p-2 text-violet lg:hidden"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -65,8 +65,8 @@ export function Navbar({ basePath = "" }: { basePath?: string }) {
       </nav>
 
       {open && (
-        <div className="border-t border-border bg-background lg:hidden">
-          <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mt-2 w-full max-w-[1240px] overflow-hidden rounded-[1.5rem] border border-black/10 bg-white/98 shadow-[0_18px_45px_rgba(15,10,25,0.16)] backdrop-blur-xl lg:hidden">
+          <div className="flex flex-col gap-4 px-5 py-5 sm:px-7">
             {navLinks.map((link) => (
               <a
                 key={link.href}
