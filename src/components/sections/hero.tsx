@@ -21,11 +21,18 @@ export function Hero() {
             <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/7 px-3 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-white/75">
               <Sparkles className="h-3 w-3 text-orange" /> Sistema Industrial por Velocentum
             </span>
-            <h1 className="mt-7 max-w-full font-display text-[clamp(2rem,10vw,4.25rem)] uppercase leading-[.91] tracking-[-0.04em] sm:text-[4.25rem] lg:text-[4.5rem]">
-              <span className="block whitespace-nowrap">Tu capacidad</span>
-              <span className="block whitespace-nowrap">ya existe.</span>
-              <span className="block whitespace-nowrap text-violet">Hagamos que el</span>
-              <span className="block whitespace-nowrap text-violet">mercado la encuentre.</span>
+            <h1 className="mt-7 max-w-full font-display text-[clamp(2rem,10vw,4.25rem)] uppercase leading-[.91] tracking-[-0.04em] sm:text-[4.25rem] lg:text-[4.4rem]">
+              <span className="lg:hidden">
+                <span className="block whitespace-nowrap">Tu capacidad</span>
+                <span className="block whitespace-nowrap">ya existe.</span>
+                <span className="block whitespace-nowrap text-violet">Hagamos que el</span>
+                <span className="block whitespace-nowrap text-violet">mercado la encuentre.</span>
+              </span>
+              <span className="hidden lg:block">
+                <span className="block whitespace-nowrap">Tu capacidad ya existe.</span>
+                <span className="block whitespace-nowrap text-violet">Hagamos que el</span>
+                <span className="block whitespace-nowrap text-violet">mercado la encuentre.</span>
+              </span>
             </h1>
             <p className="mt-7 max-w-xl text-base leading-relaxed text-white/68 sm:text-lg">
               Diseñamos presencia, contenido, visibilidad en Google y sistemas de cotización para
