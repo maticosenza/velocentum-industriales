@@ -6,8 +6,8 @@ import { trackMetaContact } from "@/lib/meta-pixel";
 
 const navLinks = [
   { label: "Sistema", href: "#sistema" },
-  { label: "Casos", href: "#casos" },
   { label: "Cómo trabajamos", href: "#proceso" },
+  { label: "Casos", href: "#casos" },
 ];
 
 const contactHref =
