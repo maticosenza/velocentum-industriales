@@ -9,9 +9,14 @@ export function Brand({
 }) {
   return (
     <span className="inline-flex items-center gap-2.5" aria-label="Velocentum">
-      <svg className="h-7 w-7 shrink-0" viewBox="0 0 28 28" aria-hidden="true">
-        <path d="M3.3 4.5h5.1l5.6 10.2v9.1L3.3 4.5Z" fill="#F5451F" />
-        <path d="M24.7 4.5h-5.1L14 14.7v9.1L24.7 4.5Z" fill="#8A3FFC" />
+      <svg
+        className="block h-8 w-8 shrink-0"
+        viewBox="0 0 64 64"
+        shapeRendering="geometricPrecision"
+        aria-hidden="true"
+      >
+        <path d="M10 12h12l10 18v22L10 12Z" fill="#F5451F" />
+        <path d="M54 12H42L32 30v22L54 12Z" fill="#8A3FFC" />
       </svg>
       {!compact && (
         <span
