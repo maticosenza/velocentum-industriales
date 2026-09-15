@@ -24,13 +24,19 @@ export function CaseDetail({ caseStudy }: { caseStudy: IndustrialCase }) {
   const accentText = isOrange ? "text-orange" : "text-violet";
   const accentBg = isOrange ? "bg-orange" : "bg-violet";
   const accentSoft = isOrange ? "bg-orange-soft" : "bg-violet-soft";
+  const heroBackground = isOrange ? "case-hero-orange" : "case-hero-violet";
 
   return (
     <div className="flex min-h-screen flex-col bg-paper">
       <Navbar basePath="/" />
       <main className="flex-1">
-        <section className="industrial-night relative overflow-hidden pb-20 pt-32 text-white sm:pb-28 sm:pt-36">
-          <div className="hero-grid absolute inset-0 opacity-50" />
+        <section
+          className={`${heroBackground} relative overflow-hidden pb-20 pt-32 text-white sm:pb-28 sm:pt-36`}
+        >
+          <div className="hero-grid absolute inset-0 opacity-35" />
+          <div
+            className={`absolute -right-20 top-20 h-72 w-72 rounded-full blur-3xl ${isOrange ? "bg-orange/15" : "bg-violet/18"}`}
+          />
           <div className="relative mx-auto w-full max-w-[1100px] px-5 sm:px-8">
             <a
               href="/#casos"
@@ -47,7 +53,7 @@ export function CaseDetail({ caseStudy }: { caseStudy: IndustrialCase }) {
               <h1 className="mt-5 font-display text-6xl uppercase leading-[0.92] tracking-[-0.035em] sm:text-7xl lg:text-8xl">
                 {caseStudy.name}
               </h1>
-              <p className="mt-7 max-w-3xl text-lg leading-relaxed text-white/65 sm:text-xl">
+              <p className="mt-7 max-w-3xl text-lg leading-relaxed text-white/78 sm:text-xl">
                 {caseStudy.summary}
               </p>
             </div>

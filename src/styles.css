@@ -159,6 +159,18 @@
     border: 1px solid rgba(190, 164, 231, 0.2);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
   }
+  .case-hero-orange {
+    background:
+      radial-gradient(circle at 13% 18%, rgba(138, 63, 252, 0.4), transparent 28rem),
+      radial-gradient(circle at 88% 18%, rgba(245, 69, 31, 0.32), transparent 31rem),
+      linear-gradient(118deg, #24183a 0%, #31203e 48%, #3a2026 100%);
+  }
+  .case-hero-violet {
+    background:
+      radial-gradient(circle at 12% 18%, rgba(138, 63, 252, 0.46), transparent 30rem),
+      radial-gradient(circle at 88% 12%, rgba(105, 80, 210, 0.25), transparent 28rem),
+      linear-gradient(118deg, #25183c 0%, #2e2145 52%, #252039 100%);
+  }
   .status-violet {
     background: #f0e8ff;
     color: #6f28dc;
