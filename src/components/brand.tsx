@@ -1,9 +1,11 @@
 export function Brand({
   inverse = false,
   compact = false,
+  navigation = false,
 }: {
   inverse?: boolean;
   compact?: boolean;
+  navigation?: boolean;
 }) {
   return (
     <span className="inline-flex items-center gap-2.5" aria-label="Velocentum">
@@ -13,7 +15,13 @@ export function Brand({
         aria-hidden="true"
         width={997}
         height={841}
-        className={`block w-auto shrink-0 object-contain ${inverse ? "h-7" : "h-[26px]"}`}
+        className={`block shrink-0 object-contain ${
+          inverse
+            ? "h-7 w-auto"
+            : navigation
+              ? "h-[27px] w-8 sm:hidden"
+              : "h-[27px] w-8"
+        }`}
       />
       {!compact && (
         <img

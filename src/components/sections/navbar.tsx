@@ -20,7 +20,7 @@ export function Navbar({ basePath = "" }: { basePath?: string }) {
     <header className="fixed inset-x-0 top-0 z-50 w-full px-3 py-3 sm:px-5">
       <nav className="mx-auto flex h-16 w-full max-w-[1240px] items-center justify-between rounded-full border border-black/10 bg-white/95 px-5 shadow-[0_12px_35px_rgba(15,10,25,0.14)] backdrop-blur-xl sm:px-7">
         <a href={`${basePath}#inicio`} className="flex items-center gap-3">
-          <Brand />
+          <Brand navigation />
           <span className="hidden border-l border-black/15 pl-3 text-[10px] font-bold uppercase tracking-[0.16em] text-steel sm:inline">
             Sistema Industrial
           </span>
