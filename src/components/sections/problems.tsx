@@ -28,7 +28,14 @@ export function Problems() {
         <div className="max-w-4xl">
           <p className="eyebrow">El problema comercial</p>
           <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.04em] text-ink sm:text-5xl">
-            Una gran capacidad industrial puede quedar invisible detrás de una presencia débil.
+            <span className="md:hidden">
+              Una gran capacidad industrial puede quedar invisible detrás de una presencia débil.
+            </span>
+            <span className="hidden md:block">
+              <span className="block whitespace-nowrap">Una gran capacidad industrial</span>
+              <span className="block whitespace-nowrap">puede quedar invisible detrás</span>
+              <span className="block whitespace-nowrap">de una presencia débil.</span>
+            </span>
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-steel sm:text-lg">
             El mercado primero necesita encontrar, entender y confiar. Después llega la oportunidad
