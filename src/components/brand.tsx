@@ -1,5 +1,3 @@
-import { cn } from "@/lib/utils";
-
 export function Brand({
   inverse = false,
   compact = false,
@@ -8,24 +6,28 @@ export function Brand({
   compact?: boolean;
 }) {
   return (
-    <span className="inline-flex items-center gap-2.5" aria-label="Velocentum">
-      <svg
-        className="block h-8 w-8 shrink-0"
-        viewBox="0 0 64 64"
-        shapeRendering="geometricPrecision"
+    <span className="inline-flex items-center gap-2" aria-label="Velocentum">
+      <img
+        src="/brand/velocentum-v-transparente.svg"
+        alt=""
         aria-hidden="true"
-      >
-        <path d="M10 12h12l10 18v22L10 12Z" fill="#F5451F" />
-        <path d="M54 12H42L32 30v22L54 12Z" fill="#8A3FFC" />
-      </svg>
+        width={1254}
+        height={1254}
+        className="block h-8 w-8 shrink-0 object-contain"
+      />
       {!compact && (
-        <span
-          className={cn(
-            "text-[1.3rem] font-extrabold leading-none tracking-[-0.055em]",
-            inverse ? "text-white" : "text-ink",
-          )}
-        >
-          velocentum
+        <span className="relative block h-6 w-[126px] shrink-0 overflow-hidden" aria-hidden="true">
+          <img
+            src={
+              inverse
+                ? "/brand/velocentum-logotipo-blanco.svg"
+                : "/brand/velocentum-logotipo-negro.svg"
+            }
+            alt=""
+            width={2117}
+            height={743}
+            className="absolute left-0 top-1/2 block w-full -translate-y-1/2"
+          />
         </span>
       )}
     </span>

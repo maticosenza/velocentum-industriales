@@ -1,4 +1,4 @@
-import { Camera, FileSearch, MonitorSmartphone, Search } from "lucide-react";
+import { Camera, Mail, Megaphone, MonitorSmartphone } from "lucide-react";
 
 const services = [
   {
@@ -14,16 +14,16 @@ const services = [
       "Fotografía, video y piezas que muestran fabricación, maquinaria, equipo, trabajos terminados e historia.",
   },
   {
-    icon: Search,
-    title: "Visibilidad en Google",
+    icon: Megaphone,
+    title: "Google y Meta",
     description:
-      "Posicionamiento y publicidad para aparecer cuando compradores reales buscan soluciones específicas.",
+      "Posicionamiento y campañas para aparecer cuando compradores reales buscan o descubren soluciones específicas.",
   },
   {
-    icon: FileSearch,
-    title: "Cotizaciones y seguimiento",
+    icon: Mail,
+    title: "Seguimiento y email marketing",
     description:
-      "Consultas, estados, clientes, responsables e historial para que ninguna oportunidad quede sin respuesta.",
+      "Consultas, cotizaciones, automatizaciones y campañas para acompañar cada oportunidad hasta la decisión.",
   },
 ];
 
@@ -31,9 +31,11 @@ export function Services() {
   return (
     <section
       id="servicios"
-      className="industrial-night relative overflow-hidden py-20 text-white sm:py-24"
+      className="relative overflow-hidden bg-white py-20 text-ink sm:py-24"
     >
-      <div className="hero-grid absolute inset-0 opacity-20" />
+      <div className="paper-grid absolute inset-0 opacity-70" />
+      <div className="absolute -left-48 -top-56 h-[30rem] w-[30rem] rounded-full bg-violet/8 blur-3xl" />
+      <div className="absolute -bottom-56 right-[-8rem] h-[28rem] w-[28rem] rounded-full bg-orange/7 blur-3xl" />
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8">
         <div className="max-w-3xl">
           <p className="eyebrow text-orange">Un sistema, cuatro partes</p>
@@ -42,7 +44,7 @@ export function Services() {
             <br />
             <span className="text-violet">Convertimos. Ordenamos.</span>
           </h2>
-          <p className="mt-5 max-w-xl text-white/60">
+          <p className="mt-5 max-w-xl text-steel">
             No son servicios aislados. Cada parte alimenta a la siguiente para convertir capacidad
             productiva en oportunidades comerciales.
           </p>
