@@ -21,7 +21,7 @@ export function Hero() {
             <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/75 px-3 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-steel shadow-sm">
               <Sparkles className="h-3 w-3 text-orange" /> Sistema Industrial por Velocentum
             </span>
-            <h1 className="mt-7 max-w-[25rem] font-display text-[clamp(2rem,9.2vw,3rem)] uppercase leading-[.91] tracking-[-0.04em] sm:max-w-full sm:text-[4.1rem] md:text-[3rem] lg:text-[4.15rem]">
+            <h1 className="mt-7 max-w-[25rem] font-display text-[clamp(2.5rem,12vw,3.25rem)] uppercase leading-[.91] tracking-[-0.04em] sm:max-w-full sm:text-[4.1rem] md:text-[3rem] lg:text-[4.15rem]">
               <span className="lg:hidden">
                 <span className="block whitespace-nowrap">Tu capacidad</span>
                 <span className="block whitespace-nowrap">ya existe.</span>
