@@ -26,8 +26,8 @@ export function Hero() {
                 <span className="block whitespace-nowrap">Tu capacidad</span>
                 <span className="block whitespace-nowrap">ya existe.</span>
                 <span className="block whitespace-nowrap">Hagamos que</span>
-                <span className="block whitespace-nowrap text-violet">el mercado la</span>
-                <span className="block whitespace-nowrap text-violet">encuentre.</span>
+                <span className="block whitespace-nowrap text-violet">el mercado</span>
+                <span className="block whitespace-nowrap text-violet">la encuentre.</span>
               </span>
               <span className="hidden lg:block">
                 <span className="block whitespace-nowrap">Tu capacidad</span>
