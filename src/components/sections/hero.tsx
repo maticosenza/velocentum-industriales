@@ -63,10 +63,10 @@ export function Hero() {
                 Ver cómo funciona <span aria-hidden="true">↓</span>
               </a>
             </div>
-            <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 border-t border-black/10 pt-6 text-[11px] font-semibold uppercase tracking-[0.13em] text-ink/45">
+            <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-3 border-t border-black/10 pt-6 text-center text-[10px] font-semibold uppercase tracking-[0.11em] text-ink/45 sm:flex sm:flex-wrap sm:gap-x-7 sm:text-left sm:text-[11px] sm:tracking-[0.13em]">
               <span>Presencia digital</span>
               <span>Contenido técnico</span>
-              <span>Gestión comercial</span>
+              <span className="col-span-2 sm:col-auto">Gestión comercial</span>
             </div>
           </div>
 
