@@ -5,7 +5,7 @@ const services = [
     icon: MonitorSmartphone,
     title: "Presencia industrial",
     description:
-      "Una web que explica productos, capacidades, aplicaciones, certificaciones, experiencia y formas de trabajo.",
+      "Una web que explica productos, capacidades, aplicaciones y certificaciones, y centraliza consultas, cotizaciones y gestión del equipo.",
   },
   {
     icon: Camera,
@@ -21,9 +21,9 @@ const services = [
   },
   {
     icon: Mail,
-    title: "Seguimiento y email marketing",
+    title: "Email marketing",
     description:
-      "Consultas, cotizaciones, automatizaciones y campañas para acompañar cada oportunidad hasta la decisión.",
+      "Campañas y automatizaciones para nutrir contactos, reactivar oportunidades y mantener el vínculo con clientes.",
   },
 ];
 
