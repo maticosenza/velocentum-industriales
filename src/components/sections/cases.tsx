@@ -120,7 +120,9 @@ export function Cases() {
 
                 <a
                   href={item.href}
-                  className="relative mt-7 inline-flex items-center gap-2 text-sm font-bold text-ink"
+                  className={`relative mt-7 inline-flex w-fit items-center gap-2 rounded-full px-5 py-3 text-sm font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md ${
+                    isOrange ? "bg-orange hover:bg-orange/90" : "bg-violet hover:bg-violet/90"
+                  }`}
                 >
                   Ver caso
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
