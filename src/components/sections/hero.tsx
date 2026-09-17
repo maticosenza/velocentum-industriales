@@ -25,19 +25,19 @@ export function Hero() {
               <span className="lg:hidden">
                 <span className="block whitespace-nowrap">Tu capacidad</span>
                 <span className="block whitespace-nowrap">ya existe.</span>
-                <span className="block whitespace-nowrap text-violet">Hagamos que el</span>
-                <span className="block whitespace-nowrap text-violet">mercado la</span>
+                <span className="block whitespace-nowrap">Hagamos que</span>
+                <span className="block whitespace-nowrap text-violet">el mercado la</span>
                 <span className="block whitespace-nowrap text-violet">encuentre.</span>
               </span>
               <span className="hidden lg:block">
                 <span className="block whitespace-nowrap">Tu capacidad</span>
                 <span className="block whitespace-nowrap">ya existe.</span>
-                <span className="block whitespace-nowrap text-violet">Hagamos que</span>
+                <span className="block whitespace-nowrap">Hagamos que</span>
                 <span className="block whitespace-nowrap text-violet">el mercado</span>
                 <span className="block whitespace-nowrap text-violet">la encuentre.</span>
               </span>
             </h1>
-            <p className="mt-7 max-w-[24rem] text-base leading-relaxed text-steel sm:max-w-[31rem] sm:text-lg">
+            <p className="mt-7 max-w-[24rem] text-base leading-relaxed text-steel sm:max-w-[31rem] sm:text-lg lg:max-w-[25rem]">
               Diseñamos presencia, contenido, campañas en Google y Meta y sistemas de seguimiento
               para que las empresas industriales generen y ordenen nuevas oportunidades comerciales.
             </p>
