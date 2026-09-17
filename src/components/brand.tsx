@@ -19,13 +19,13 @@ export function Brand({
         <img
           src={
             inverse
-              ? "/brand/velocentum-logotipo-blanco.svg"
-              : "/brand/velocentum-logotipo-negro.svg"
+              ? "/brand/velocentum-logotipo-blanco-tight.webp"
+              : "/brand/velocentum-logotipo-negro-tight.webp"
           }
           alt=""
           aria-hidden="true"
-          width={1970}
-          height={330}
+          width={768}
+          height={119}
           className={`block w-auto shrink-0 object-contain ${inverse ? "h-6" : "h-[21px]"}`}
         />
       )}
