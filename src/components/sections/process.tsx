@@ -28,7 +28,16 @@ export function Process() {
         <div className="max-w-3xl">
           <p className="eyebrow">Cómo trabajamos</p>
           <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.04em] text-ink sm:text-5xl">
-            Un sistema construido alrededor de cómo vende tu empresa.
+            <span className="sm:hidden">
+              <span className="block whitespace-nowrap">Un sistema</span>
+              <span className="block whitespace-nowrap">construido</span>
+              <span className="block whitespace-nowrap">alrededor de</span>
+              <span className="block whitespace-nowrap">cómo vende</span>
+              <span className="block whitespace-nowrap">tu empresa.</span>
+            </span>
+            <span className="hidden sm:inline">
+              Un sistema construido alrededor de cómo vende tu empresa.
+            </span>
           </h2>
           <p className="mt-4 text-steel">
             No forzamos una fórmula estándar: ordenamos prioridades y construimos por etapas.
