@@ -35,7 +35,15 @@ export function Footer({ basePath = "" }: { basePath?: string }) {
           <div>
             <Brand inverse />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/55">
-              Presencia, contenido, visibilidad y gestión comercial para empresas industriales.
+              <span className="sm:hidden">
+                <span className="block whitespace-nowrap">Presencia, contenido, visibilidad y</span>
+                <span className="block whitespace-nowrap">
+                  gestión comercial para empresas industriales.
+                </span>
+              </span>
+              <span className="hidden sm:inline">
+                Presencia, contenido, visibilidad y gestión comercial para empresas industriales.
+              </span>
             </p>
           </div>
 
