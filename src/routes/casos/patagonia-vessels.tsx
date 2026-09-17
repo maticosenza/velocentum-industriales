@@ -6,29 +6,36 @@ const patagoniaCase: IndustrialCase = {
   category: "Equipos industriales",
   eyebrow: "Caso · Fabricación por proyecto",
   summary:
-    "Una presencia técnica que ordena trayectoria, capacidades y proceso de fabricación para preparar mejor cada pedido de presupuesto.",
+    "Una presencia técnica conectada con un sistema de presupuestos para convertir cada requerimiento en una propuesta lista para enviar.",
   challenge:
     "Comunicar capacidad técnica, experiencia y fabricación a medida antes del primer contacto con el comprador.",
   solution:
-    "Una arquitectura de contenidos que presenta la empresa, sus capacidades, trayectoria, clientes y forma de trabajo alrededor del requerimiento técnico.",
+    "Una arquitectura de contenidos conectada con un panel que centraliza solicitudes, contactos comerciales y presupuestos emitidos.",
   outcome:
-    "El comprador puede validar qué fabrica la empresa y cómo aborda cada proyecto antes de enviar la información necesaria para presupuestar.",
+    "El comprador puede validar la capacidad técnica y el equipo puede preparar, generar en PDF y enviar el presupuesto desde una misma operación.",
+  journeyTitle: "De la capacidad técnica al presupuesto enviado.",
   capabilities: [
     "Presentación clara de capacidades y especialización industrial.",
-    "Trayectoria y experiencia integradas como señales de confianza.",
-    "Proceso de fabricación explicado antes del primer contacto.",
-    "Pedido de presupuesto orientado a proyectos y requerimientos técnicos.",
+    "Solicitudes y contactos comerciales centralizados por estado.",
+    "Presupuestos con conceptos, moneda, IVA, vigencia y condiciones.",
+    "Generación de PDF, envío por email, edición y reenvío desde el panel.",
   ],
   flow: [
     {
       title: "Capacidades",
       text: "El comprador identifica si la empresa puede resolver su necesidad.",
     },
-    { title: "Proceso", text: "La metodología y la fabricación quedan explicadas con claridad." },
-    { title: "Requerimiento", text: "La consulta se enfoca en la necesidad técnica del proyecto." },
+    {
+      title: "Requerimiento",
+      text: "La solicitud llega enfocada en la necesidad técnica del proyecto.",
+    },
     {
       title: "Presupuesto",
-      text: "El equipo recibe una base más sólida para avanzar comercialmente.",
+      text: "El equipo prepara conceptos, cantidades, condiciones y totales.",
+    },
+    {
+      title: "Envío y seguimiento",
+      text: "La propuesta se genera en PDF, se envía por email y conserva su estado.",
     },
   ],
   publicUrl: "https://patagoniavessels.com.ar",

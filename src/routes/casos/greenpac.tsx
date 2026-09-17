@@ -13,11 +13,12 @@ const greenpacCase: IndustrialCase = {
     "Un catálogo digital conectado con una operación que centraliza maquinaria, consultas, cotizaciones, clientes, zonas y tiendas.",
   outcome:
     "El equipo puede recibir el pedido con contexto, preparar la cotización y seguir la oportunidad desde una misma lógica comercial.",
+  journeyTitle: "Del producto consultado a una gestión comercial compartida.",
   capabilities: [
     "Catálogo de maquinaria y repuestos organizado por producto.",
     "Consultas vinculadas con el interés específico del comprador.",
     "Cotizaciones, clientes y estados comerciales centralizados.",
-    "Gestión de zonas, tiendas y responsables dentro del mismo sistema.",
+    "Gestión de zonas, tiendas, miembros y permisos por rol dentro del mismo sistema.",
   ],
   flow: [
     { title: "Catálogo", text: "El comprador entiende el equipo, sus usos y especificaciones." },
@@ -26,7 +27,10 @@ const greenpacCase: IndustrialCase = {
       title: "Cotización",
       text: "El equipo comercial prepara y registra la propuesta correspondiente.",
     },
-    { title: "Seguimiento", text: "La oportunidad conserva responsables, estado e historial." },
+    {
+      title: "Gestión comercial",
+      text: "La oportunidad queda asignada, cambia de estado y conserva su historial dentro del equipo.",
+    },
   ],
   publicUrl: "https://greenpac.com.ar",
   publicLabel: "Visitar Greenpac",

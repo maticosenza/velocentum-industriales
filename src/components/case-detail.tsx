@@ -11,6 +11,7 @@ export type IndustrialCase = {
   challenge: string;
   solution: string;
   outcome: string;
+  journeyTitle: string;
   capabilities: string[];
   flow: { title: string; text: string }[];
   publicUrl: string;
@@ -29,9 +30,7 @@ export function CaseDetail({ caseStudy }: { caseStudy: IndustrialCase }) {
     <div className="flex min-h-screen flex-col bg-paper">
       <Navbar basePath="/" />
       <main className="flex-1">
-        <section
-          className="relative overflow-hidden bg-white pb-20 pt-32 text-ink sm:pb-28 sm:pt-36"
-        >
+        <section className="relative overflow-hidden bg-white pb-20 pt-32 text-ink sm:pb-28 sm:pt-36">
           <div className="paper-grid absolute inset-0 opacity-80" />
           <div
             className={`absolute -right-20 top-20 h-72 w-72 rounded-full blur-3xl ${isOrange ? "bg-orange/10" : "bg-violet/10"}`}
@@ -91,7 +90,7 @@ export function CaseDetail({ caseStudy }: { caseStudy: IndustrialCase }) {
             <div className="max-w-3xl">
               <p className="eyebrow">Recorrido conectado</p>
               <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.04em] text-ink sm:text-5xl">
-                De la información al seguimiento comercial.
+                {caseStudy.journeyTitle}
               </h2>
             </div>
             <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">

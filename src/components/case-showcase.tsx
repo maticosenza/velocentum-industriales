@@ -7,7 +7,9 @@ import {
   FileText,
   Gauge,
   Search,
+  Send,
   Settings2,
+  Users,
 } from "lucide-react";
 
 type ShowcaseProps = {
@@ -24,8 +26,8 @@ const greenpacViews = [
   },
   {
     kicker: "02 · Gestión comercial",
-    title: "Del producto consultado a la cotización.",
-    text: "El equipo recibe la oportunidad vinculada al producto, asigna un responsable y conserva el estado y el historial en una sola vista.",
+    title: "Cotizaciones, responsables y estados en una sola vista.",
+    text: "El panel centraliza la operación y permite que administradores, vendedores y empleados trabajen sobre cada oportunidad con roles definidos.",
     view: "pipeline",
   },
 ] as const;
@@ -38,10 +40,10 @@ const patagoniaViews = [
     view: "capabilities",
   },
   {
-    kicker: "02 · Pedido técnico",
-    title: "El requerimiento llega mejor preparado.",
-    text: "La solicitud reúne alcance, documentación y datos de contacto para darle al equipo una base concreta desde el primer intercambio.",
-    view: "request",
+    kicker: "02 · Gestión de presupuestos",
+    title: "Del requerimiento al presupuesto enviado.",
+    text: "El equipo centraliza la solicitud, prepara conceptos, cantidades y condiciones, genera el PDF y lo envía por email desde el mismo panel.",
+    view: "budget",
   },
 ] as const;
 
@@ -88,7 +90,7 @@ export function CaseShowcase({ kind, accent }: ShowcaseProps) {
                     {item.view === "catalog" && <CatalogView />}
                     {item.view === "pipeline" && <PipelineView />}
                     {item.view === "capabilities" && <CapabilitiesView />}
-                    {item.view === "request" && <RequestView />}
+                    {item.view === "budget" && <BudgetView />}
                   </ProductFrame>
                 </div>
               </article>
@@ -175,17 +177,17 @@ function CatalogView() {
 
 function PipelineView() {
   const rows = [
-    ["Productor · Santa Fe", "Tolva 24 Tn", "Nueva consulta"],
-    ["Distribuidor · Córdoba", "Kit de repuestos", "En preparación"],
-    ["Contratista · Buenos Aires", "Equipo a medida", "Propuesta enviada"],
+    ["Tolva 24 Tn", "Ventas norte", "Pendiente"],
+    ["Kit de repuestos", "Distribuidor", "Contactado"],
+    ["Equipo a medida", "Administración", "Propuesta enviada"],
   ];
   return (
     <div>
       <div className="grid grid-cols-3 gap-2">
         {[
-          ["18", "Consultas"],
-          ["7", "Cotizaciones"],
-          ["4", "Seguimientos"],
+          ["11", "Cotizaciones"],
+          ["5", "Consultas nuevas"],
+          ["2", "Miembros"],
         ].map(([value, label]) => (
           <div key={label} className="rounded-xl bg-[#f3f1ed] p-3">
             <p className="text-xl font-extrabold">{value}</p>
@@ -193,19 +195,24 @@ function PipelineView() {
           </div>
         ))}
       </div>
+      <div className="mt-4 flex gap-2 overflow-hidden text-[7px] font-bold text-steel">
+        <span className="rounded-full bg-orange px-3 py-1.5 text-white">Cotizaciones</span>
+        <span className="rounded-full bg-[#f3f1ed] px-3 py-1.5">Consultas</span>
+        <span className="rounded-full bg-[#f3f1ed] px-3 py-1.5">Miembros y roles</span>
+      </div>
       <div className="mt-4 overflow-hidden rounded-xl border border-black/8">
         <div className="grid grid-cols-[1.15fr_.9fr_auto] gap-3 bg-[#f3f1ed] px-3 py-2 text-[7px] font-bold uppercase tracking-wider text-steel">
-          <span>Contacto</span>
-          <span>Interés</span>
+          <span>Oportunidad</span>
+          <span>Responsable</span>
           <span>Estado</span>
         </div>
-        {rows.map(([contact, interest, status], index) => (
+        {rows.map(([opportunity, owner, status], index) => (
           <div
-            key={contact}
+            key={opportunity}
             className="grid grid-cols-[1.15fr_.9fr_auto] items-center gap-3 border-t border-black/7 px-3 py-3 text-[8px]"
           >
-            <span className="font-bold">{contact}</span>
-            <span className="text-steel">{interest}</span>
+            <span className="font-bold">{opportunity}</span>
+            <span className="text-steel">{owner}</span>
             <span
               className={`rounded-full px-2 py-1 text-[6px] font-bold ${index === 0 ? "bg-orange-soft text-orange" : "bg-violet-soft text-violet"}`}
             >
@@ -255,43 +262,69 @@ function CapabilitiesView() {
   );
 }
 
-function RequestView() {
+function BudgetView() {
   return (
-    <div className="grid gap-4 sm:grid-cols-[.85fr_1.15fr]">
-      <div className="rounded-xl bg-[#171321] p-5 text-white">
-        <ClipboardList className="h-6 w-6 text-violet" />
-        <p className="mt-5 text-lg font-extrabold">Solicitud técnica</p>
-        <p className="mt-2 text-[8px] leading-relaxed text-white/55">
-          La información indispensable para evaluar el proyecto antes de cotizar.
-        </p>
-        <div className="mt-5 space-y-2">
-          {["Aplicación", "Condición de trabajo", "Documentación", "Plazo estimado"].map((item) => (
-            <div key={item} className="flex items-center gap-2 text-[8px] text-white/70">
-              <CheckCircle2 className="h-3 w-3 text-violet" />
-              {item}
-            </div>
-          ))}
+    <div>
+      <div className="flex items-center justify-between border-b border-black/8 pb-4">
+        <div className="flex items-center gap-2 text-xs font-extrabold">
+          <FileText className="h-4 w-4 text-violet" /> Gestión de presupuestos
         </div>
+        <span className="rounded-full bg-violet px-3 py-2 text-[7px] font-bold text-white">
+          Nuevo presupuesto
+        </span>
       </div>
-      <div className="rounded-xl border border-black/8 p-4">
-        <div className="flex items-center gap-2 text-[9px] font-extrabold">
-          <FileText className="h-4 w-4 text-violet" /> Nuevo requerimiento
-        </div>
-        <div className="mt-4 grid gap-3">
-          {["Empresa y contacto", "Tipo de equipo o servicio", "Descripción del proyecto"].map(
-            (label, index) => (
-              <div key={label}>
-                <p className="mb-1.5 text-[7px] font-semibold text-steel">{label}</p>
-                <div
-                  className={`${index === 2 ? "h-12" : "h-8"} rounded-lg border border-black/10 bg-[#faf9f6]`}
-                />
+      <div className="mt-4 flex flex-wrap gap-2 text-[7px] font-bold text-steel">
+        <span className="rounded-full bg-[#171321] px-3 py-1.5 text-white">
+          Solicitudes recibidas
+        </span>
+        <span className="rounded-full bg-[#f3f1ed] px-3 py-1.5">Presupuestos emitidos</span>
+        <span className="rounded-full bg-[#f3f1ed] px-3 py-1.5">Contactos comerciales</span>
+      </div>
+      <div className="mt-4 grid gap-3 sm:grid-cols-[.72fr_1.28fr]">
+        <div className="rounded-xl bg-[#171321] p-4 text-white">
+          <ClipboardList className="h-5 w-5 text-violet" />
+          <p className="mt-4 text-[10px] font-extrabold">Solicitud técnica</p>
+          <p className="mt-2 text-[7px] leading-relaxed text-white/55">
+            Proyecto y documentación listos para presupuestar.
+          </p>
+          <div className="mt-4 space-y-2">
+            {["Producto definido", "Requerimiento visto", "Contacto centralizado"].map((item) => (
+              <div key={item} className="flex items-center gap-2 text-[7px] text-white/70">
+                <CheckCircle2 className="h-3 w-3 text-violet" />
+                {item}
               </div>
-            ),
-          )}
+            ))}
+          </div>
+        </div>
+        <div className="rounded-xl border border-black/8 p-4">
           <div className="flex items-center justify-between">
-            <span className="text-[7px] text-steel">Adjuntar documentación</span>
-            <span className="rounded-full bg-violet px-3 py-2 text-[7px] font-bold text-white">
-              Enviar solicitud
+            <div className="flex items-center gap-2 text-[9px] font-extrabold">
+              <Users className="h-4 w-4 text-violet" /> Preparar propuesta
+            </div>
+            <span className="rounded-full bg-violet-soft px-2 py-1 text-[6px] font-bold text-violet">
+              Borrador
+            </span>
+          </div>
+          <div className="mt-4 grid grid-cols-3 gap-2">
+            {["Moneda", "IVA", "Vigencia"].map((label, index) => (
+              <div key={label}>
+                <p className="mb-1.5 text-[6px] font-semibold text-steel">{label}</p>
+                <div className="rounded-lg bg-[#f3f1ed] px-2 py-2 text-[7px] font-bold">
+                  {index === 0 ? "ARS" : index === 1 ? "21%" : "15 días"}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-3 rounded-lg bg-[#f3f1ed] p-3">
+            <div className="flex justify-between text-[7px]">
+              <span className="font-bold">Concepto y cantidad</span>
+              <span className="font-extrabold">$ 3.630,00</span>
+            </div>
+          </div>
+          <div className="mt-3 flex items-center justify-between">
+            <span className="text-[7px] text-steel">PDF listo para enviar</span>
+            <span className="inline-flex items-center gap-1 rounded-full bg-violet px-3 py-2 text-[7px] font-bold text-white">
+              <Send className="h-3 w-3" /> Generar y enviar
             </span>
           </div>
         </div>
