@@ -6,14 +6,14 @@ export function Brand({
   compact?: boolean;
 }) {
   return (
-    <span className="inline-flex items-center gap-2" aria-label="Velocentum">
+    <span className="inline-flex items-center gap-2.5" aria-label="Velocentum">
       <img
         src="/brand/velocentum-v-transparente.svg"
         alt=""
         aria-hidden="true"
-        width={1254}
-        height={1254}
-        className="block h-8 w-8 shrink-0 object-contain"
+        width={997}
+        height={841}
+        className={`block w-auto shrink-0 object-contain ${inverse ? "h-7" : "h-[26px]"}`}
       />
       {!compact && (
         <img
@@ -26,7 +26,7 @@ export function Brand({
           aria-hidden="true"
           width={1970}
           height={330}
-          className="block h-[1.2rem] w-auto shrink-0 object-contain"
+          className={`block w-auto shrink-0 object-contain ${inverse ? "h-6" : "h-[21px]"}`}
         />
       )}
     </span>
