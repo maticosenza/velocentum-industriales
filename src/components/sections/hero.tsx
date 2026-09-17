@@ -32,8 +32,9 @@ export function Hero() {
               <span className="hidden lg:block">
                 <span className="block whitespace-nowrap">Tu capacidad</span>
                 <span className="block whitespace-nowrap">ya existe.</span>
-                <span className="block whitespace-nowrap text-violet">Hagamos que el</span>
-                <span className="block whitespace-nowrap text-violet">mercado la encuentre.</span>
+                <span className="block whitespace-nowrap text-violet">Hagamos que</span>
+                <span className="block whitespace-nowrap text-violet">el mercado</span>
+                <span className="block whitespace-nowrap text-violet">la encuentre.</span>
               </span>
             </h1>
             <p className="mt-7 max-w-[24rem] text-base leading-relaxed text-steel sm:max-w-[31rem] sm:text-lg">
@@ -70,14 +71,14 @@ export function Hero() {
           </div>
 
           <div className="relative mx-auto min-w-0 w-full max-w-[560px] lg:ml-auto lg:mt-10">
-            <div className="absolute -inset-4 rounded-[2rem] border border-black/10 bg-white shadow-[0_24px_70px_rgba(40,24,72,0.12)]" />
-            <div className="sm:hidden">
+            <div className="pointer-events-none absolute -inset-4 rounded-[2rem] border border-black/10 bg-white shadow-[0_24px_70px_rgba(40,24,72,0.12)]" />
+            <div className="relative z-10 sm:hidden">
               <IndustrialDashboard compact />
             </div>
-            <div className="hidden sm:block">
+            <div className="relative z-10 hidden sm:block">
               <IndustrialDashboard />
             </div>
-            <div className="absolute -bottom-5 -left-4 flex items-center gap-3 rounded-2xl border border-white/12 bg-[#211b35]/95 px-4 py-3 shadow-xl backdrop-blur sm:-left-8">
+            <div className="absolute -bottom-5 -left-4 z-20 flex items-center gap-3 rounded-2xl border border-white/12 bg-[#211b35]/95 px-4 py-3 shadow-xl backdrop-blur sm:-left-8">
               <span className="grid h-9 w-9 place-items-center rounded-xl bg-orange text-white">
                 <Search className="h-4 w-4" />
               </span>
