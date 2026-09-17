@@ -16,12 +16,12 @@ export function Hero() {
       <div className="absolute -left-40 -top-40 h-[34rem] w-[34rem] rounded-full bg-violet/10 blur-3xl" />
       <div className="absolute -bottom-48 right-[-8rem] h-[30rem] w-[30rem] rounded-full bg-orange/8 blur-3xl" />
       <div className="relative mx-auto w-full max-w-[1320px] px-5 sm:px-8">
-        <div className="grid min-w-0 gap-14 lg:grid-cols-[minmax(0,540px)_minmax(0,560px)] lg:items-start lg:justify-between lg:gap-16">
-          <div className="min-w-0 max-w-[540px]">
+        <div className="grid min-w-0 gap-14 md:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] md:items-start md:gap-8 lg:grid-cols-[minmax(0,540px)_minmax(0,560px)] lg:justify-between lg:gap-16">
+          <div className="min-w-0 max-w-[540px] md:max-w-[320px] lg:max-w-[540px]">
             <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/75 px-3 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-steel shadow-sm">
               <Sparkles className="h-3 w-3 text-orange" /> Sistema Industrial por Velocentum
             </span>
-            <h1 className="mt-7 max-w-[25rem] font-display text-[clamp(2rem,9.2vw,3rem)] uppercase leading-[.91] tracking-[-0.04em] sm:max-w-full sm:text-[4.1rem] lg:text-[4.15rem]">
+            <h1 className="mt-7 max-w-[25rem] font-display text-[clamp(2rem,9.2vw,3rem)] uppercase leading-[.91] tracking-[-0.04em] sm:max-w-full sm:text-[4.1rem] md:text-[3rem] lg:text-[4.15rem]">
               <span className="lg:hidden">
                 <span className="block whitespace-nowrap">Tu capacidad</span>
                 <span className="block whitespace-nowrap">ya existe.</span>
@@ -37,7 +37,7 @@ export function Hero() {
                 <span className="block whitespace-nowrap text-violet">la encuentre.</span>
               </span>
             </h1>
-            <p className="mt-7 max-w-[24rem] text-base leading-relaxed text-steel sm:max-w-[31rem] sm:text-lg lg:max-w-[25rem]">
+            <p className="mt-7 max-w-[24rem] text-base leading-relaxed text-steel sm:max-w-[31rem] sm:text-lg md:max-w-[20rem] md:text-base lg:max-w-[25rem] lg:text-lg">
               Diseñamos presencia, contenido, campañas en Google y Meta y sistemas de seguimiento
               para que las empresas industriales generen y ordenen nuevas oportunidades comerciales.
             </p>
@@ -70,7 +70,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative mx-auto min-w-0 w-full max-w-[560px] lg:ml-auto lg:mt-10">
+          <div className="relative mx-auto min-w-0 w-full max-w-[560px] md:ml-auto md:mt-14 md:max-w-[360px] lg:mt-10 lg:max-w-[560px]">
             <div className="pointer-events-none absolute -inset-4 rounded-[2rem] border border-black/10 bg-white shadow-[0_24px_70px_rgba(40,24,72,0.12)]" />
             <div className="relative z-10 sm:hidden">
               <IndustrialDashboard compact />
