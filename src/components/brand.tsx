@@ -19,7 +19,7 @@ export function Brand({
           inverse
             ? "h-7 w-auto"
             : navigation
-              ? "h-[27px] w-8 sm:hidden"
+              ? "hidden"
               : "h-[27px] w-8"
         }`}
       />
