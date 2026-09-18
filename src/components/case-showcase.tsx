@@ -52,15 +52,23 @@ export function CaseShowcase({ kind, accent }: ShowcaseProps) {
   const accentText = accent === "orange" ? "text-orange" : "text-violet";
 
   return (
-    <section className="bg-paper pb-20 sm:pb-24">
-      <div className="mx-auto w-full max-w-[1100px] px-5 sm:px-8">
-        <div className="border-t border-black/10 pt-20 sm:pt-24">
+    <section
+      id="sistema-del-caso"
+      className="relative overflow-hidden bg-ink py-20 text-white sm:py-28"
+    >
+      <div className="case-dark-grid absolute inset-0 opacity-40" />
+      <div className="relative mx-auto w-full max-w-[1200px] px-5 sm:px-8">
+        <div>
           <div className="max-w-3xl">
-            <p className="eyebrow">El sistema en funcionamiento</p>
-            <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.04em] text-ink sm:text-5xl">
+            <p
+              className={`font-mono text-[10px] font-bold uppercase tracking-[.18em] ${accentText}`}
+            >
+              El sistema en funcionamiento
+            </p>
+            <h2 className="mt-4 text-4xl font-extrabold leading-[1.02] tracking-[-0.04em] text-white sm:text-5xl">
               Del sitio público a la gestión de la oportunidad.
             </h2>
-            <p className="mt-5 max-w-2xl text-steel">
+            <p className="mt-5 max-w-2xl text-white/55">
               Recreamos las vistas principales para mostrar con claridad qué función cumple cada
               parte, sin exponer información comercial del cliente.
             </p>
@@ -78,10 +86,10 @@ export function CaseShowcase({ kind, accent }: ShowcaseProps) {
                   >
                     {item.kicker}
                   </p>
-                  <h3 className="mt-4 text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
+                  <h3 className="mt-4 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
                     {item.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-steel sm:text-base">
+                  <p className="mt-4 text-sm leading-relaxed text-white/55 sm:text-base">
                     {item.text}
                   </p>
                 </div>
@@ -99,6 +107,110 @@ export function CaseShowcase({ kind, accent }: ShowcaseProps) {
         </div>
       </div>
     </section>
+  );
+}
+
+export function CaseHeroVisual({ kind, accent }: ShowcaseProps) {
+  const isGreenpac = kind === "greenpac";
+  const accentClass = accent === "orange" ? "bg-orange" : "bg-violet";
+  const softClass =
+    accent === "orange" ? "bg-orange-soft text-orange" : "bg-violet-soft text-violet";
+
+  return (
+    <div className="relative mx-auto w-full max-w-[650px] pb-8 sm:pb-10">
+      <div className={`absolute -inset-5 rounded-[2.5rem] opacity-25 blur-2xl ${accentClass}`} />
+      <div className="relative overflow-hidden rounded-[1.8rem] border border-white/15 bg-[#f6f4ef] p-3 shadow-[0_35px_100px_rgba(0,0,0,.45)] sm:p-4">
+        <div className="overflow-hidden rounded-[1.2rem] bg-white text-ink">
+          <div className="flex items-center justify-between border-b border-black/8 px-4 py-3 sm:px-5">
+            <div className="flex items-center gap-2">
+              <span
+                className={`grid h-7 w-7 place-items-center rounded-lg text-[8px] font-extrabold text-white ${accentClass}`}
+              >
+                {isGreenpac ? "GP" : "PV"}
+              </span>
+              <div>
+                <p className="text-[9px] font-extrabold">
+                  {isGreenpac ? "Greenpac" : "Patagonia Vessels"}
+                </p>
+                <p className="font-mono text-[5px] uppercase tracking-[.16em] text-steel">
+                  Panel comercial
+                </p>
+              </div>
+            </div>
+            <span className={`rounded-full px-2.5 py-1.5 text-[6px] font-bold ${softClass}`}>
+              Sistema activo
+            </span>
+          </div>
+          <div className="grid min-h-[290px] grid-cols-[.34fr_1fr] sm:min-h-[355px]">
+            <div className="bg-[#efede8] p-3 sm:p-4">
+              <div className="mb-5 h-2 w-10 rounded-full bg-black/12" />
+              {["Resumen", isGreenpac ? "Cotizaciones" : "Presupuestos", "Contactos", "Equipo"].map(
+                (item, index) => (
+                  <div
+                    key={item}
+                    className={`mb-2 rounded-lg px-2 py-2 text-[6px] font-bold sm:text-[7px] ${index === 1 ? `${accentClass} text-white` : "text-steel"}`}
+                  >
+                    {item}
+                  </div>
+                ),
+              )}
+            </div>
+            <div className="p-3 sm:p-5">
+              <p className="font-mono text-[6px] uppercase tracking-[.16em] text-steel">
+                Vista general
+              </p>
+              <div className="mt-3 grid grid-cols-3 gap-2">
+                {[
+                  ["12", isGreenpac ? "Consultas" : "Solicitudes"],
+                  ["7", "En proceso"],
+                  ["4", isGreenpac ? "Cotizaciones" : "Presupuestos"],
+                ].map(([value, label]) => (
+                  <div key={label} className="rounded-lg bg-[#f3f1ed] p-2.5 sm:p-3">
+                    <p className="text-base font-extrabold sm:text-xl">{value}</p>
+                    <p className="mt-1 text-[5px] uppercase tracking-wide text-steel sm:text-[6px]">
+                      {label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-3 overflow-hidden rounded-xl border border-black/8">
+                <div className="flex items-center justify-between bg-[#f3f1ed] px-3 py-2 text-[6px] font-bold">
+                  <span>{isGreenpac ? "Operación comercial" : "Presupuestos recientes"}</span>
+                  <span className={accent === "orange" ? "text-orange" : "text-violet"}>
+                    Ver todos
+                  </span>
+                </div>
+                {[
+                  "Nueva oportunidad",
+                  isGreenpac ? "Distribuidor regional" : "Proyecto industrial",
+                  "Seguimiento pendiente",
+                ].map((row, index) => (
+                  <div
+                    key={row}
+                    className="flex items-center justify-between border-t border-black/7 px-3 py-3 text-[6px] sm:text-[7px]"
+                  >
+                    <span className="font-bold">{row}</span>
+                    <span
+                      className={`rounded-full px-2 py-1 ${index === 0 ? softClass : "bg-[#f3f1ed] text-steel"}`}
+                    >
+                      {index === 0 ? "Nuevo" : "En proceso"}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className={`absolute bottom-0 left-5 rounded-2xl px-4 py-3 text-white shadow-2xl sm:left-8 ${accentClass}`}
+      >
+        <p className="font-mono text-[6px] uppercase tracking-[.16em] text-white/65">
+          Recorrido conectado
+        </p>
+        <p className="mt-1 text-[9px] font-extrabold sm:text-xs">Sitio → consulta → gestión</p>
+      </div>
+    </div>
   );
 }
 
