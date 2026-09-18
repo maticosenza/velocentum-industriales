@@ -52,6 +52,7 @@ export const Route = createFileRoute("/casos/greenpac")({
       { property: "og:url", content: "https://velocentum.agency/casos/greenpac" },
       { name: "robots", content: "index, follow" },
     ],
+    links: [{ rel: "canonical", href: "https://velocentum.agency/casos/greenpac" }],
   }),
   component: () => <CaseDetail caseStudy={greenpacCase} />,
 });

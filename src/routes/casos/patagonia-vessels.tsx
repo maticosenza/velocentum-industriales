@@ -61,6 +61,12 @@ export const Route = createFileRoute("/casos/patagonia-vessels")({
       },
       { name: "robots", content: "index, follow" },
     ],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://velocentum.agency/casos/patagonia-vessels",
+      },
+    ],
   }),
   component: () => <CaseDetail caseStudy={patagoniaCase} />,
 });

@@ -36,6 +36,7 @@ export const Route = createFileRoute("/")({
           "Presencia, contenido, visibilidad en Google y gestión de cotizaciones para empresas industriales.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://velocentum.agency/" }],
   }),
   component: Index,
 });
