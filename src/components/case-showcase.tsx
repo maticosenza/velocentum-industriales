@@ -133,73 +133,19 @@ export function CaseHeroVisual({ kind, accent }: ShowcaseProps) {
                   {isGreenpac ? "Greenpac" : "Patagonia Vessels"}
                 </p>
                 <p className="font-mono text-[5px] uppercase tracking-[.16em] text-steel">
-                  Panel comercial
+                  {isGreenpac ? "Catálogo conectado" : "Solicitud técnica"}
                 </p>
               </div>
             </div>
             <span className={`rounded-full px-2.5 py-1.5 text-[6px] font-bold ${softClass}`}>
-              Sistema activo
+              {isGreenpac ? "Consulta recibida" : "Listo para presupuestar"}
             </span>
           </div>
-          <div className="grid min-h-[290px] grid-cols-[.34fr_1fr] sm:min-h-[355px]">
-            <div className="bg-[#efede8] p-3 sm:p-4">
-              <div className="mb-5 h-2 w-10 rounded-full bg-black/12" />
-              {["Resumen", isGreenpac ? "Cotizaciones" : "Presupuestos", "Contactos", "Equipo"].map(
-                (item, index) => (
-                  <div
-                    key={item}
-                    className={`mb-2 rounded-lg px-2 py-2 text-[6px] font-bold sm:text-[7px] ${index === 1 ? `${accentClass} text-white` : "text-steel"}`}
-                  >
-                    {item}
-                  </div>
-                ),
-              )}
-            </div>
-            <div className="p-3 sm:p-5">
-              <p className="font-mono text-[6px] uppercase tracking-[.16em] text-steel">
-                Vista general
-              </p>
-              <div className="mt-3 grid grid-cols-3 gap-2">
-                {[
-                  ["12", isGreenpac ? "Consultas" : "Solicitudes"],
-                  ["7", "En proceso"],
-                  ["4", isGreenpac ? "Cotizaciones" : "Presupuestos"],
-                ].map(([value, label]) => (
-                  <div key={label} className="rounded-lg bg-[#f3f1ed] p-2.5 sm:p-3">
-                    <p className="text-base font-extrabold sm:text-xl">{value}</p>
-                    <p className="mt-1 text-[5px] uppercase tracking-wide text-steel sm:text-[6px]">
-                      {label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-3 overflow-hidden rounded-xl border border-black/8">
-                <div className="flex items-center justify-between bg-[#f3f1ed] px-3 py-2 text-[6px] font-bold">
-                  <span>{isGreenpac ? "Operación comercial" : "Presupuestos recientes"}</span>
-                  <span className={accent === "orange" ? "text-orange" : "text-violet"}>
-                    Ver todos
-                  </span>
-                </div>
-                {[
-                  "Nueva oportunidad",
-                  isGreenpac ? "Distribuidor regional" : "Proyecto industrial",
-                  "Seguimiento pendiente",
-                ].map((row, index) => (
-                  <div
-                    key={row}
-                    className="flex items-center justify-between border-t border-black/7 px-3 py-3 text-[6px] sm:text-[7px]"
-                  >
-                    <span className="font-bold">{row}</span>
-                    <span
-                      className={`rounded-full px-2 py-1 ${index === 0 ? softClass : "bg-[#f3f1ed] text-steel"}`}
-                    >
-                      {index === 0 ? "Nuevo" : "En proceso"}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          {isGreenpac ? (
+            <GreenpacInquiry accentClass={accentClass} softClass={softClass} />
+          ) : (
+            <PatagoniaRequest accentClass={accentClass} softClass={softClass} />
+          )}
         </div>
       </div>
       <div
@@ -209,6 +155,100 @@ export function CaseHeroVisual({ kind, accent }: ShowcaseProps) {
           Recorrido conectado
         </p>
         <p className="mt-1 text-[9px] font-extrabold sm:text-xs">Sitio → consulta → gestión</p>
+      </div>
+    </div>
+  );
+}
+
+function GreenpacInquiry({ accentClass, softClass }: { accentClass: string; softClass: string }) {
+  return (
+    <div className="grid min-h-[300px] gap-3 bg-[#f3f1ed] p-3 sm:min-h-[355px] sm:grid-cols-[.85fr_1.15fr] sm:p-5">
+      <div className="overflow-hidden rounded-xl bg-white">
+        <div className="grid h-28 place-items-center bg-orange/10 sm:h-36">
+          <Settings2 className="h-12 w-12 text-orange/45" />
+        </div>
+        <div className="p-4">
+          <p className="font-mono text-[6px] uppercase tracking-[.16em] text-orange">
+            Producto consultado
+          </p>
+          <p className="mt-2 text-[11px] font-extrabold sm:text-sm">Tolva autodescargable</p>
+          <p className="mt-2 text-[7px] leading-relaxed text-steel">
+            Capacidad, aplicación y especificaciones vinculadas a la consulta.
+          </p>
+        </div>
+      </div>
+      <div className="rounded-xl bg-white p-4">
+        <div className="flex items-center justify-between">
+          <p className="text-[9px] font-extrabold">Consulta comercial</p>
+          <span className={`rounded-full px-2 py-1 text-[6px] font-bold ${softClass}`}>Nueva</span>
+        </div>
+        <div className="mt-4 space-y-2">
+          {[
+            ["Empresa", "Productor regional"],
+            ["Zona", "Centro · Buenos Aires"],
+            ["Necesidad", "Equipo para campaña 2027"],
+          ].map(([label, value]) => (
+            <div key={label} className="rounded-lg bg-[#f3f1ed] px-3 py-2.5">
+              <p className="text-[6px] uppercase tracking-wide text-steel">{label}</p>
+              <p className="mt-1 text-[8px] font-bold">{value}</p>
+            </div>
+          ))}
+        </div>
+        <div
+          className={`mt-3 flex items-center justify-between rounded-lg px-3 py-2.5 text-white ${accentClass}`}
+        >
+          <span className="text-[8px] font-bold">Preparar cotización</span>
+          <ArrowRight className="h-3 w-3" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PatagoniaRequest({ accentClass, softClass }: { accentClass: string; softClass: string }) {
+  return (
+    <div className="grid min-h-[300px] gap-3 bg-[#f3f1ed] p-3 sm:min-h-[355px] sm:grid-cols-[1.12fr_.88fr] sm:p-5">
+      <div className="rounded-xl bg-white p-4">
+        <div className="flex items-center justify-between">
+          <p className="text-[9px] font-extrabold">Requerimiento industrial</p>
+          <span className={`rounded-full px-2 py-1 text-[6px] font-bold ${softClass}`}>
+            Revisado
+          </span>
+        </div>
+        <p className="mt-4 text-base font-extrabold leading-tight sm:text-xl">
+          Tanque de proceso fabricado a medida.
+        </p>
+        <div className="mt-4 grid grid-cols-2 gap-2">
+          {[
+            ["Capacidad", "12.000 litros"],
+            ["Material", "Acero inoxidable"],
+            ["Industria", "Alimentos"],
+            ["Entrega", "A coordinar"],
+          ].map(([label, value]) => (
+            <div key={label} className="rounded-lg bg-[#f3f1ed] p-2.5">
+              <p className="text-[6px] uppercase tracking-wide text-steel">{label}</p>
+              <p className="mt-1 text-[8px] font-bold">{value}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-col rounded-xl bg-ink p-4 text-white">
+        <FileText className="h-5 w-5 text-violet" />
+        <p className="mt-4 font-mono text-[6px] uppercase tracking-[.16em] text-white/45">
+          Documentación
+        </p>
+        <p className="mt-2 text-[10px] font-extrabold">Plano y memoria técnica adjuntos</p>
+        <div className="mt-4 space-y-2 text-[7px] text-white/65">
+          <p>✓ Contacto centralizado</p>
+          <p>✓ Alcance técnico revisado</p>
+          <p>✓ Datos listos para cotizar</p>
+        </div>
+        <div
+          className={`mt-auto flex items-center justify-between rounded-lg px-3 py-2.5 text-white ${accentClass}`}
+        >
+          <span className="text-[8px] font-bold">Crear presupuesto</span>
+          <ArrowRight className="h-3 w-3" />
+        </div>
       </div>
     </div>
   );

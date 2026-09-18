@@ -1,6 +1,6 @@
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { IndustrialDashboard } from "@/components/industrial-dashboard";
+import { OpportunityDetail } from "@/components/industrial-dashboard";
 import { trackMetaContact } from "@/lib/meta-pixel";
 
 const features = [
@@ -19,7 +19,7 @@ export function System() {
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8">
         <div className="grid gap-14 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
           <div className="hidden lg:order-1 lg:block">
-            <IndustrialDashboard />
+            <OpportunityDetail />
           </div>
 
           <div className="lg:order-2">
@@ -33,7 +33,7 @@ export function System() {
             </p>
 
             <div className="mt-8 lg:hidden">
-              <IndustrialDashboard compact />
+              <OpportunityDetail compact />
             </div>
 
             <ul className="mt-8 space-y-4">
