@@ -1,9 +1,28 @@
 import { Brand } from "@/components/brand";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 const footerLinks = [
   { label: "Sistema", href: "#sistema" },
   { label: "Casos", href: "#casos" },
   { label: "Cómo trabajamos", href: "#proceso" },
+];
+
+const socialLinks = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/velocentum/",
+    icon: Instagram,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/velocentum/",
+    icon: Facebook,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/velocentum/",
+    icon: Linkedin,
+  },
 ];
 
 export function Footer({ basePath = "" }: { basePath?: string }) {
@@ -83,6 +102,21 @@ export function Footer({ basePath = "" }: { basePath?: string }) {
                 </li>
                 <li>Buenos Aires, Argentina</li>
               </ul>
+              <div className="mt-6 flex items-center gap-3">
+                {socialLinks.map(({ label, href, icon: Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    title={label}
+                    className="grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/5 text-white/65 transition hover:border-white/30 hover:bg-white/10 hover:text-white"
+                  >
+                    <Icon className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -182,16 +182,16 @@ export function OpportunityDetail({ compact = false }: { compact?: boolean }) {
             </div>
           </div>
 
-          <div className="rounded-xl bg-ink p-4 text-white">
-            <p className="font-mono text-[7px] font-semibold uppercase tracking-[0.16em] text-white/45">
+          <div className="rounded-xl border border-black/7 bg-white p-4">
+            <p className="font-mono text-[7px] font-semibold uppercase tracking-[0.16em] text-steel">
               Origen y responsable
             </p>
-            <div className="mt-4 rounded-lg bg-white/7 p-3">
-              <p className="text-[7px] text-white/45">Canal de ingreso</p>
+            <div className="mt-4 rounded-lg bg-[#f3f1ed] p-3">
+              <p className="text-[7px] text-steel">Canal de ingreso</p>
               <p className="mt-1 text-[10px] font-bold">Google · Formulario web</p>
             </div>
-            <div className="mt-2 rounded-lg bg-white/7 p-3">
-              <p className="text-[7px] text-white/45">Responsable asignado</p>
+            <div className="mt-2 rounded-lg bg-[#f3f1ed] p-3">
+              <p className="text-[7px] text-steel">Responsable asignado</p>
               <p className="mt-1 text-[10px] font-bold">Equipo comercial</p>
             </div>
           </div>
